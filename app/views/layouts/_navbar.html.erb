@@ -1,0 +1,40 @@
+<header class="masthead navbar-light" id="main_header">
+  <div class="container">
+    <a class="navbar-brand" href="<%= root_path %>">
+      <img src="<%= image_path('av-logo-inverse.png') %>">
+    </a>
+
+    <div id="account-controls" class="hidden-xs pull-right">
+      <% if user_signed_in? %>
+        <div class="login-signup">
+          <%= link_to 'My Account', root_path %>
+          <%= link_to 'Log out', destroy_user_session_path %>
+        </div>
+    </div>
+    <% else %>
+      <div class="login-signup">
+        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+</header>
+
+<div class="navbar navbar-inverse navbar-static-top collapse navbar-collapse hidden-sm navbar-dark navbar-light affix" id="nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-10">
+        <ul class="nav navbar-nav nav-justified">
+          <div class="nav-link">
+            <li><%= link_to 'ABOUT',root_path('#')%></li>
+            <li><%= link_to 'ABOUT',root_path('#')%></li>
+            <li><%= link_to 'ABOUT',root_path('#')%></li>
+            <li><%= link_to 'ABOUT',root_path('#')%></li>
+            <li><%= link_to 'ABOUT',root_path('#')%></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

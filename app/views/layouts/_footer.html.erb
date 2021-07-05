@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="col-sm-7">
+    <div id="upper-section" class="row">
+      <div class="footer-info col-xs-6 col-sm-4">
+        <ul>
+          <h3>Learn More</h3>
+          <li><%= link_to 'About Us', root_path('#') %></li>
+          <li><%= link_to 'About this webpage', root_path('#') %></li>
+          <li><%= link_to 'Development memo', root_path %></li>
+          <li><%= link_to 'next time!', root_path('#') %></li>
+          <li><%= link_to 'Qiita', '#' %> </li>
+          <li><%= link_to 'github this webpage', '#' %></li>
+        </ul>
+      </div>
+
+      <div class="footer-info col-xs-6 col-sm-4">
+        <ul>
+          <h3>Social</h3>
+          <li>
+            <a class="github" href="#" target="_blank" style="white-space: nowrap">
+              <i class="fa fa-facebook fa-custom-social"></i>&nbsp;GitHub
+            </a>
+          </li>
+          <li>
+            <a class="twitter" href="#" target="_blank" style="white-space: nowrap">
+              <i class="fa fa-twitter fa-custom-social"></i>&nbsp;Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-info col-xs-12 col-sm-4">
+        <ul>
+          <h3>Our Sponsors</h3>
+          <li>
+            <a href="https://standuply.com/?utm_source=links&utm_medium=agileventures&utm_campaign=partnership" target="_blank">Standup Bot</a>
+          </li>
+          <li>
+            <a href="#" target="_blank">Craft Academy</a>
+          </li>
+          <li>
+            <a href="#" target="_blank">Mooqita</a>
+          </li>
+          <li>
+            <%= link_to 'Becoming a sponsor', root_path('#'), style: 'font-size: 0.9em;' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <%# <div class="row">
+      <h3><img src="<%= image_path('av-logo-inverse.png') %>
+      <%# <p>AgileVentures - Crowdsourced Learning</p>
+    </div> %>
+  </div>
+
+  <div class="col-sm-5 contact">
+    <h3 class="footer_header">
+      Contact us
+    </h3>
+    <p>Send a my email to <%= mail_to '#', 'e-mail' %>.</p>
+    <p>ここに住所とか入れたい</p>
+  </div>
+</div>
