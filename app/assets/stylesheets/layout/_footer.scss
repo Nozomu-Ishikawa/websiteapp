@@ -4,9 +4,9 @@
 $footer-height: 350px;
 $footer-upper-section-height: 200px;
 $footer-upper-section-height: 10px;
-$theme-darker: rgb(207, 135, 52);
+$theme-darker: rgb(79, 227, 241);
 $black: rgb(40, 35, 35);
-$theme-main: #eded;
+$theme-main: rgba(0, 0, 0, 0.867);
 
 // #wrap {
 //   min-height: 100%;
@@ -68,18 +68,18 @@ $theme-main: #eded;
   }
 
   a {
-    color: #cdcdcd;
+    color: #ffffff;
     text-overflow: ellipsis;
 
     &:hover, &:active {
       color: $theme-main;
 
       &.github {
-        color: #458dd8;
+        color: #000000;
       }
 
       &.twitter {
-        color: #8EC1DA;
+        color: #000000;
       }
     }
   }

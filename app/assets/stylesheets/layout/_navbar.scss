@@ -2,7 +2,7 @@
 @import 'mixins';
 @import 'main';
 
-$navbar-padding-y: 50px;
+$navbar-padding-y: 48px;
 $navbar-padding-x: 20px;
 $navbar-brand-padding-y: auto;
 $navbar-brand-margin-end: auto;
@@ -14,6 +14,8 @@ $navbar-toggler-padding-y: auto;
 $navbar-toggler-padding-x: auto;
 $small-logo-height: 20px;
 $white: white;
+
+$nav-color: rgb(0, 0, 0);
 
 $header-height: 60px;
 $header-height: 60px;
@@ -31,80 +33,37 @@ $header-height: 60px;
   margin: 0;
   z-index: 999;
   position: relative;
-  // @include gradient-bg();
-  // Because flex properties aren't inherited, we need to redeclare these first
-  // few properties so that content nested within behave properly.
-  // The `flex-wrap` property is inherited to simplify the expanded navbars
-
-  // .container>.col-xs-12>.nav>.nav-link>li>a {
-  //   display: flex;
-  //   flex-wrap: inherit;
-  //   justify-content: center;
-  //   justify-content: space-between;
-  // }
-
-  // @each $breakpoint, $container-max-width in $container-max-widths {
-  //   > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
-  //     @extend %container-flex-properties;
-  //   }
-  // }
-
-  .navbar.fixed {
-    position: fixed;
-    top: 50px;
-    left: auto;
-    z-index: +1;
-  }
-
-  .container {
-    padding: 0 15px;
-    margin: auto;
 
     .row {
       padding: auto;
-      margin: auto;
-
+      height: 48px;
+      
       .col-xs-12 {
+        display: table;
+        justify-content: center;
         padding: 0 15px;
-        margin: 0;
-      }
-
-      .col-xs-12>.navbar-nav>.nav-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 15px;
+        margin: auto;
+        height: 48px;
       }
 
       .col-xs-12>.navbar-nav>.nav-link>li {
-        text-align: center;
-        align-content: center;
+        display: table-cell;
         padding: 15px;
       }
     }
-  }
 
   &.affix {
     padding: 0 15px;
 
     .navbar-nav>li>a {
       color: $nav-color;
-      background-color: $theme-dark;
+      background-color: rgb(0, 0, 0);
       @include css-transition(background-color 0.3s ease);
   
       &:hover, &:active, &.active {
-        background-color: $theme-darker;
+        background-color: #eee;
       }
 
-      .navbar-nav>li>a {
-        color: $white;
-        background-color: $theme-dark;
-        @include css-transition(background-color 0.3s ease);
-    
-        &:hover, &:active, &.active {
-          background-color: $theme-darker;
-        }    
-      }
       .fa {
         width: 16px;
         height: 16px;
@@ -112,14 +71,7 @@ $header-height: 60px;
     }
   }
   
-    // Responsive navbar
-    //
-    // Custom styles for responsive collapsing and toggling of navbar contents.
-    // Powered by the collapse Bootstrap JavaScript plugin.
     
-    // When collapsed, prevent the toggleable navbar contents from appearing in
-    // the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
-    // on the `.navbar` parent.
     .navbar-collapse {
       width: 100%;
     }
@@ -142,71 +94,28 @@ $header-height: 60px;
     }
   }
 
-
-
-// Generate series of `.navbar-expand-*` responsive classes for configuring
-// where your navbar collapses.
-// .navbar-expand {
-//   @each $breakpoint in map-keys($grid-breakpoints) {
-//     $next: breakpoint-next($breakpoint, $grid-breakpoints);
-//     $infix: breakpoint-infix($next, $grid-breakpoints);
-
-//     // stylelint-disable-next-line scss/selector-no-union-class-name
-//     &#{$infix} {
-//       @include media-breakpoint-up($next) {
-//         flex-wrap: nowrap;
-//         justify-content: flex-start;
-
-//         .navbar-nav {
-//           flex-direction: row;
-
-//           .dropdown-menu {
-//             position: absolute;
-//           }
-
-//           .nav-link {
-//             padding-right: $navbar-nav-link-padding-x;
-//             padding-left: $navbar-nav-link-padding-x;
-//           }
-//         }
-
-        // .navbar-collapse {
-        //   display: flex !important; // stylelint-disable-line declaration-no-important
-        // }
-
-        // .navbar-toggler {
-        //   display: none;
-        // }
-//       }
-//     }
-//   }
-// }
-
-
-// Navbar themes
-//
-// nav-bar-color
-
-$navbar-dark-brand-color: rgb(0, 0, 0);
-$navbar-light-brand-hover-color: rgb(141, 40, 40);
-$navbar-light-color: rgb(217, 11, 11);
-$navbar-light-brand-color: rgb(0, 0, 0);
+$navbar-dark-brand-color: rgb(255, 255, 255);
+$navbar-light-brand-hover-color: rgb(66, 53, 53);
+$navbar-light-color: rgb(42, 37, 37);
+$navbar-light-brand-color: rgb(255, 255, 255);
 $navbar-light-hover-color: rgb(33, 151, 197);
 $navbar-light-disabled-color: rgb(24, 71, 125);
 $navbar-light-active-color: rgb(0, 0, 0);
 $navbar-light-toggler-border-color: #eee;
 $navbar-dark-brand-hover-color: #eee;
-$navbar-dark-color: rgba(0, 0, 0, 0.178);
-$navbar-dark-hover-color: rgb(141, 40, 40);
+$navbar-dark-color: rgb(255, 255, 255);
+$navbar-dark-hover-color: rgb(219, 190, 190);
 $navbar-dark-disabled-color: rgb(50, 182, 96);
-
+$navbar-dark-active-color: #eee;
+$navbar-dark-toggler-border-color: #eee;
+$navbar-dark-toggler-icon-bg: #eee;
 $theme-darker: rgba(138, 63, 63, 0.933);
 
 // nav-bar-color
 
 
 
-// Dark links against a light background
+// --navbar-color setting --//
 .navbar-light {
   .login-signup>a {
     color:  $navbar-light-brand-color;
@@ -218,7 +127,7 @@ $theme-darker: rgba(138, 63, 63, 0.933);
   }
 
   .navbar-nav {
-    .nav-link>li>a {
+    .nav-link>li {
       color: $navbar-light-color;
 
       &:hover,
@@ -230,21 +139,12 @@ $theme-darker: rgba(138, 63, 63, 0.933);
         color: $navbar-light-disabled-color;
       }
     }
-
-    .show > .nav-link,
-    .nav-link.active {
-      color: $navbar-light-active-color;
-    }
   }
 
   .navbar-toggler {
     color: $navbar-light-color;
     border-color: $navbar-light-toggler-border-color;
   }
-
-  // .navbar-toggler-icon {
-  //   background-image: escape-svg($navbar-light-toggler-icon-bg);
-  // }
 
   .navbar-text {
     color: $navbar-light-color;
@@ -257,8 +157,6 @@ $theme-darker: rgba(138, 63, 63, 0.933);
   }
 }
 
-
-// // White links against a dark background
 .navbar-dark {
   .navbar-brand {
     color: $navbar-dark-brand-color;
@@ -284,35 +182,33 @@ $theme-darker: rgba(138, 63, 63, 0.933);
     }
   }
 
-//     .show > .nav-link,
-//     .nav-link.active {
-//       color: $navbar-dark-active-color;
-//     }
-//   }
+    .show > .nav-link,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
 
-//   .navbar-toggler {
-//     color: $navbar-dark-color;
-//     border-color: $navbar-dark-toggler-border-color;
-//   }
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
 
-//   .navbar-toggler-icon {
-//     background-image: escape-svg($navbar-dark-toggler-icon-bg);
-//   }
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-dark-toggler-icon-bg);
+  }
 
-//   .navbar-text {
-//     color: $navbar-dark-color;
-//     a,
-//     a:hover,
-//     a:focus {
-//       color: $navbar-dark-active-color;
-//     }
-//   }
-}
+  .navbar-text {
+    color: $navbar-dark-color;
+    a,
+    a:hover,
+    a:focus {
+      color: $navbar-dark-active-color;
+    }
+  }
 
 
 
 .nav-link {
-  // @include css-border-radius(0);
   padding: 0 15px;
   text-align: right;
   
@@ -358,12 +254,6 @@ $theme-darker: rgba(138, 63, 63, 0.933);
   }
 
   $fa-custom-icon-size: 26px;
-
-    .fa-custom-accounts {
-      height: $fa-custom-icon-size;
-      text-align: center;
-      width: $fa-custom-icon-size;
-    }
 
     .navbar-inverse, .navbar-toggle:hover {
       margin-left:5px;

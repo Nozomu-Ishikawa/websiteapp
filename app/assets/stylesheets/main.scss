@@ -4,8 +4,8 @@ $theme-dark: rgba(61, 40, 40, 0.933);
 $nav-color: rgba(255, 255, 255, 0.933);
 $theme-darker: rgba(138, 63, 63, 0.933);
 
-$theme-main: rgb(224, 155, 77);
-$theme-nav-color: rgba(171, 130, 32, 0.341);
+$theme-main: rgb(79, 227, 241);
+$theme-nav-color: rgba(16, 109, 215, 0.718);
 
 
 
@@ -50,7 +50,7 @@ label {
 
 #event-container .event-item {
   width: 33.3%;
-  /*height: 150px;*/
+
   margin: 5px, 15px, 5px, 5px;
 }
 
@@ -81,36 +81,10 @@ label {
   line-height: 35px !important;
 }
 
-
 .btn-agile a {
   color: #FFF !important;
   opacity: 1 !important;
 }
-
-// @media (min-width: $screen-sm) and (max-width: $screen-md) {
-//   #event-container .git-item {
-//     width: 50%;
-//     height: 150px;
-//     margin-bottom: 10px !important;
-//   }
-// }
-
-// @media (max-width: $screen-sm - 1px) {
-//   #event-container .event-item {
-//     width: 50%;
-//     height: 150px;
-//     margin-bottom: 10px !important;
-//   }
-// }
-
-// @media (max-width: $screen-xs) {
-
-//   #event-container .event-item {
-//     width: 50%;
-//     height: 150px;
-//     margin-bottom: 10px !important;
-//   }
-// }
 
 .nav-justified a {
   white-space: nowrap;
