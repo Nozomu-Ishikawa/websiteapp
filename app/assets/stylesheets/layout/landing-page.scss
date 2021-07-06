@@ -6,8 +6,8 @@ $theme-darker: rgb(69, 62, 62);
 $top-content-text-color: $theme-darker;
 
 div.section-well {
-  padding: 1em;
-  margin: 1em;
+  padding: 0;
+  margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -45,31 +45,17 @@ div.section-well {
     color: $top-content-text-color;
     font-size: 2.5em;
   }
-
-  // @media (max-width: $screen-sm-min - 1px) {
-  //   h1 {
-  //     font-size: 1.5em;
-  //   }
-  // }
 }
 
 ul.box h2 {
   font-size: 2em;
 }
 
-// @media (max-width: $screen-sm - 1px) {
-//   ul.box h2 {
-//     font-size: 1.5em;
-//   }
-// }
 
 ul#section-list {
   padding: 0;
   margin: 0;
   font-size: 1.5em;
-  // @media (max-width: $screen-sm-min - 1px) {
-  //   font-size: 1.1em;
-  // }
 
   & > li {
     margin: 0;

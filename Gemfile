@@ -57,3 +57,5 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
