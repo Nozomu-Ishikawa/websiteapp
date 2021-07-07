@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <%= render 'layouts/head' %>
+
+    <body lang="en-GB">
+
+    <%= render 'layouts/navbar' %>
+
     <%= yield %>
+    <%# <% if current_user && current_user.incomplete? && new_user_session_url == request.referrer %>
+      <%# <%= render 'layouts/require_users_profile' %>
+    <%# <% end %>
+
+    <footer id="footer">
+      <%= render 'layouts/footer' %> 
+    </footer>
   </body>
 </html>

@@ -242,6 +242,61 @@ $theme-darker: rgba(138, 63, 63, 0.933);
     border-radius: 0;
     padding: 0;
 
+    .dropdown {
+      max-width: 500px;
+      display: flex;
+    }
+
+    ul {
+      text-align: center;
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+      color: #fff;
+    }
+
+    li{
+      max-width: calc(1200px/5);
+      position: relative;
+      padding: 5px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .dropdwn>li{
+      width: 1200px;
+      margin: 1px;
+      background: #12a8c2;
+      display: inline-block;
+    }
+
+    .dropdwn_menu{
+      width: 100%;
+      display: none;
+      position: absolute;
+      margin-left: -5px;
+      margin-top: 5px;
+      padding: 0;
+      background: rgb(12, 52, 228);
+    }
+
+    .dropdwn_menu li{
+      width: 100%;
+    }
+
+    .dropdwn_menu li {
+      padding: 5px 0;
+      margin: -5px 5px -5px -5px;
+      display: block;
+      color: #fff;
+    }
+
+    li:hover{
+      background: #b3d7ff;
+      color: rgb(65, 65, 65);
+  }
+  
+
     a {
       padding: 0 15px;
     }
