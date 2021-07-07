@@ -1,40 +1,35 @@
-<div class="container"> 
-  <div class="row">
-      <div class="col-xs-11 col-sm-offset-1 col-xs-offset-0">
+<div class="edit-acount"> 
+  <div class="edit-a">
+      <div class="edit-user">
         <h2>Account details for <%= current_user.email %></h2>
       </div>
   </div>
-  <div class="col-md-3 col-md-offset-1">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="form-edit">
+    <h2>Edit profile<%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="field">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :last_name, autofocus: true %>
+      <div class="form-edit">
+        <%= f.label :last_name, class: 'edit-name' %><br />
+        <%= f.text_field :last_name, placeholder: 'Enter last_name', class: 'form-control input-lg'%>
       </div>
 
-      <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name, autofocus: true %>
+      <div class="form-edit">
+        <%= f.label :first_name, class: 'edit-name' %><br />
+        <%= f.text_field :first_name, placeholder: 'Enter first_name', class: 'form-control input-lg' %>
       </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :profile %><br />
-        <%= f.text_area :profile, autofocus: true %>
+      <div class="form-edit">
+        <%= f.label :profile, class: 'edit-name' %><br />
+        <%= f.text_area :profile, placeholder: 'Enter profile', class: 'form-control input-lg' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class: 'btn-edit' %>
       </div>
+      <%= link_to "トップページへ戻る", root_path, class: 'btn-top' %>
     <% end %>
   </div>
 </div>
 
-<%= link_to "BACK", :back %>

@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../customer");
-require("../global-script/navbar")
+require("../global-script/account")
 require("../global-script/login")
 require('jquery')
 
