@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../customer");
 require("../global-script/navbar")
+require("../global-script/login")
 require('jquery')
 
 

@@ -33,6 +33,7 @@ $header-height: 60px;
   margin: 0;
   z-index: 999;
   position: relative;
+  
 
     .row {
       padding: auto;
@@ -43,7 +44,7 @@ $header-height: 60px;
         justify-content: center;
         padding: 0 15px;
         margin: auto;
-        height: 48px;
+        height: auto;
       }
 
       .col-xs-12>.navbar-nav>.nav-link>li {
@@ -94,6 +95,8 @@ $header-height: 60px;
     }
   }
 
+
+// -- navbar color setting --//
 $navbar-dark-brand-color: rgb(255, 255, 255);
 $navbar-light-brand-hover-color: rgb(66, 53, 53);
 $navbar-light-color: rgb(42, 37, 37);
@@ -110,8 +113,6 @@ $navbar-dark-active-color: #eee;
 $navbar-dark-toggler-border-color: #eee;
 $navbar-dark-toggler-icon-bg: #eee;
 $theme-darker: rgba(138, 63, 63, 0.933);
-
-// nav-bar-color
 
 
 
