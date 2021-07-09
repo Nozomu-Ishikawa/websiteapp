@@ -59,3 +59,7 @@ gem 'omniauth-github'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'kaminari'
+gem 'dotenv-rails'
+gem 'ransack'
+gem "gretel"

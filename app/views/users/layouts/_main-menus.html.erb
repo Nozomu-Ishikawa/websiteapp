@@ -1,0 +1,59 @@
+<ul class="box">
+      
+  <li class="hidden-sm hidden-xs hidden-md">
+    <%= link_to root_path('#') do %>
+      <div class="circle">
+        <div class="front front-popular">
+          <div class="title color-1-font glyphicon glyphicon-star"></div>
+          <div class="price color-1-font"><span class="total">User</span></div>
+        </div>
+        <div class="popular color-1-font glyphicon glyphicon-star"></div>
+        <div class="back color-1-bg info">
+          <div class="title">基本方針</div>
+          <div class="description">
+            <p>ユーザーたちによって作れる利便性の高いサイトを作り上げる</p>
+            <%= link_to '詳しく見る', root_path('#'), class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </li>
+  
+  <li class="hidden-sm hidden-xs hidden-md">
+    <%= link_to root_path('#') do %>
+      <div class="circle">
+        <div class="front front-popular">
+          <div class="title color-2-font glyphicon glyphicon-user"></div>
+          <div class="price color-2-font"><span class="total">Simple</span></div>
+        </div>
+        <div class="popular color-2-font glyphicon glyphicon-user"></div>
+        <div class="back color-2-bg info">
+          <div class="title">シンプル</div>
+          <div class="description">
+            <p>使いやすさを重視したシンプルなレイアウトで充実した機能</p>
+            <%= link_to '詳しく見る', root_path('#'), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </li>
+  
+  <li class="hidden-sm hidden-xs hidden-md">
+    <%= link_to root_path('#') do %>
+      <div class="circle">
+        <div class="front front-popular">
+          <div class="title color-4-font glyphicon glyphicon-time"></div>
+          <div class="price color-4-font"><span class="total">Trade</span></div>
+        </div>
+        <div class="popular color-4-font glyphicon glyphicon-time"></div>
+        <div class="back color-4-bg info">
+          <div class="title">情報交流</div>
+          <div class="description">
+            <p>攻略情報等を気軽にできるように</p>
+            <%= link_to '詳しく見る', root_path('#'), class: 'btn btn-warning' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </li>
+</ul>

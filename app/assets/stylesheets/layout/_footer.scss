@@ -48,6 +48,14 @@ $theme-main: rgba(0, 0, 0, 0.867);
       margin: 0 auto;
     }
 
+    h3:before {
+      font-family: "Font Awesome 5 Free";
+      content: '\f19d';
+      font-weight: 50;
+      font-weight: 900;
+      padding-right: 5px;
+    }
+
     .col-sm-5 {
       vertical-align: top;
       display: table-cell;
