@@ -1,0 +1,39 @@
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-3">
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        フリーワードから探す
+      </div>
+      <div class="card-body p-4">
+        <div class="d-md-block d-none">
+          <div class="form-inline">
+            <%= search_form_for @q do |f| %>
+              <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 検索したいゲームタイトルを入力..." %>
+              <%= f.submit "検索", class: "btn-re btn-primary" %>
+              <%= link_to "リセット", reviews_path, class: "btn-re btn-danger btn-block" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-md-none d-block">
+          <%= search_form_for @q do |f| %>
+            <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: " \uf002 検索したいゲームタイトルを入力..." %>
+            <%= f.submit "検索", class: "btn-re btn-primary btn-block" %>
+            <%= link_to "リセット", reviews_path, class: "btn btn-danger btn-block" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%# <%= render 'users/reviews/map' %> 
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        みんなのレビュー（<%= @reviews.count %>件)
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/review', reviews: @reviews %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>

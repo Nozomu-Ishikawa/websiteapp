@@ -10,20 +10,18 @@
           <div class='form-group'>
             <%= f.password_field :password_confirmation, placeholder: 'Repeat password', class: 'form-control input-lg' %>
           </div>
-          <%# <div class='form-group' style="display:inline-flex;">
-            <%# <%= f.check_box :user, :user_passwords, true %>
-            <%# <%= f.label_tag :user , "I give permission for AV to send me occasional emails.", { class: 'custom-label', style: "margin-left: 5px;" } %>
-          <%# </div> %>
           <div class='form-group'>
             <%= f.submit 'Sign up', class: 'btn-login' %>
           </div>
-          <%# <div class="social">SNS login?</div>
-            <%= link_to "twitter", root_path, class: 'tw' %>
-            <%# <%= link_to "github", root_path, class: 'gh' %>
-            <%# <%= link_to "google", root_path, class: 'google' %>
-          <%# <div class="form-end"> %>
-          <%= link_to 'トップページへ戻る', root_path, class: "btn-top"%>
+          <h6>SNS login?</h6>
+          <div class="social">
+            <%= link_to "twitter", root_path, class: 'tw btn-login' %>
+            <%= link_to "github", user_github_omniauth_authorize_path, method: :post, class: 'gh btn-login' %>
+            <%= link_to 'google+', root_path, method: :post, class: 'google btn-login' %>
+          </div>
+          <div class="form-end">
+            <%= link_to 'トップページへ戻る', root_path, class: "btn-top"%>
           </div>
         <% end %>
-    </h1>
+    </div>
   </div>

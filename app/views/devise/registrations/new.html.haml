@@ -1,0 +1,12 @@
+- if @sns_id.present?  # ＠sns_idがあれば、非表示(hidden_fieldで、params[:sns_auth]としてtrueを返す)
+  = hidden_field_tag :sns_auth, true
+- else   # ＠sns_id がなければPW入力欄を表示
+  .field
+    = f.label :password
+    %em (#{@minimum_password_length} 文字以上)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"

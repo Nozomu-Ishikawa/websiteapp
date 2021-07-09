@@ -14,8 +14,16 @@
           <li>
             <%= current_user.email %>
             <ul class="dropdwn_menu">
-              <li><%= link_to 'My Account', edit_user_registration_path %></li>
-              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+              <a href="<%= user_path(current_user) %>">
+                <li>
+                <i class="fa fa-user fa-custom-accounts"></i>
+                My Account</li>
+              </a>
+              <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow">
+                <li>
+                  <i class="fas fa-sign-out-alt fa-custom-accounts"></i>
+                  Log out</li>
+              </a>
             <ul>
           </li>
         </ul>
@@ -24,10 +32,19 @@
     <% else %>
       <div class="login-signup">
         <ul class="dropdwn">
-          <li>Hello!guest!
+          <li>
+            Hello!guest!
             <ul class="dropdwn_menu">
-              <li><%= link_to 'Log in', new_user_session_path %><li>
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <a href="<%= new_user_session_path %>">
+                <li>
+                <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
+                Log in</li>
+              </a>
+              <a href="<%= new_user_registration_path %>">
+                <li>
+                <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
+                Sign up</li>
+              </a>
             </ul>
           </li>
         </ul>
@@ -42,11 +59,31 @@
       <div class="col-xs-12 col-sm-9 col-md-10">
         <ul class="nav navbar-nav nav-justified">
           <div class="nav-link">
-            <li><%= link_to 'ABOUT US',root_path('#')%></li>
-            <li><%= link_to 'TimeLine',root_path('#')%></li>
-            <li><%= link_to 'Profile',root_path('#')%></li>
-            <li><%= link_to 'My History',root_path('#')%></li>
-            <li><%= link_to 'Members',root_path('#')%></li>
+            <li>
+              <%= link_to reviews_path do %>
+                <i class="fas fa-star"></i> みんなのレビュー
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fas fa-search"></i> データベース
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="far fa-star"></i> ランキング
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fas fa-crown"></i> お気に入り
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fab fa-discourse"></i> 掲示板
+              <% end %>
+            </li>
           </div>
         </ul>
       </div>

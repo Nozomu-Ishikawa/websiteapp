@@ -12,22 +12,11 @@ div.section-well {
   overflow: hidden;
 }
 
-// @media (min-width: $screen-sm-min) {
-//   div.section-well {
-//     padding: 1em 2em;
-//     margin: 0;
-//   }
-// }
-
 #top-content {
   width: 100%;
   min-height: 100%;
   color: $top-content-text-color;
   font-size: 1.3em;
-
-  // @media (max-width: $screen-sm - 1px) {
-  //   font-size: 1.1em;
-  // }
 
   ul {
     list-style: none;
@@ -69,12 +58,6 @@ ul#section-list {
       margin-top: 0;
       font-size: 2.5em;
     }
-
-    // @media (max-width: $screen-sm-min - 1px) {
-    //   h2 {
-    //     font-size: 1.5em;
-    //   }
-    // }
 
     &:nth-child(2n+1) {
       background: asset_url("bg-1-frosted.png") no-repeat center center fixed;

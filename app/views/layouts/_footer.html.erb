@@ -3,27 +3,31 @@
     <div id="upper-section" class="row">
       <div class="footer-info col-xs-6 col-sm-4">
         <ul>
-          <h3>Learn More</h3>
-          <li><%= link_to 'About Us', root_path('#') %></li>
-          <li><%= link_to 'About this webpage', root_path('#') %></li>
-          <li><%= link_to 'Development memo', root_path %></li>
-          <li><%= link_to 'next time!', root_path('#') %></li>
-          <li><%= link_to 'Qiita', '#' %> </li>
-          <li><%= link_to 'github this webpage', '#' %></li>
+          <h3>ご利用ガイド</h3>
+          <li><%= link_to 'よくある質問', root_path('#') %></li>
+          <li><%= link_to '目的', root_path('#') %></li>
+          <li><%= link_to '開発者メモ', root_path %></li>
+          <li><%= link_to 'ご意見・ご要望はこちら', '#' %> </li>
+          <li><%= link_to '各種お問い合わせはこちら', '#' %></li>
         </ul>
       </div>
 
       <div class="footer-info col-xs-6 col-sm-4">
         <ul>
-          <h3>Social</h3>
+          <h3>各種ソーシャルメディア</h3>
           <li>
             <a class="github" href="#" target="_blank" style="white-space: nowrap">
-              <i class="fa fa-facebook fa-custom-social"></i>&nbsp;GitHub
+              <i class="fab fa-github fa-custom-social"></i>&nbsp;GitHub
+            </a>
+          </li>
+          <li>
+            <a class="Qiita" href="#" target="_blank" style="white-space: nowrap">
+              <i class="fas fa-quran fa-custom-social"></i>&nbsp;Qiita
             </a>
           </li>
           <li>
             <a class="twitter" href="#" target="_blank" style="white-space: nowrap">
-              <i class="fa fa-twitter fa-custom-social"></i>&nbsp;Twitter
+              <i class="fab fa-twitter fa-custom-social"></i></i>&nbsp;Twitter
             </a>
           </li>
         </ul>
@@ -31,34 +35,29 @@
 
       <div class="footer-info col-xs-12 col-sm-4">
         <ul>
-          <h3>Our Sponsors</h3>
+          <h3>サイト情報</h3>
           <li>
-            <a href="https://standuply.com/?utm_source=links&utm_medium=agileventures&utm_campaign=partnership" target="_blank">Standup Bot</a>
+            <a href="＃" target="_blank">運営会社</a>
           </li>
           <li>
-            <a href="#" target="_blank">Craft Academy</a>
+            <a href="#" target="_blank">利用規約</a>
           </li>
           <li>
-            <a href="#" target="_blank">Mooqita</a>
+            <a href="#" target="_blank">プライバシーポリシー</a>
           </li>
           <li>
-            <%= link_to 'Becoming a sponsor', root_path('#'), style: 'font-size: 0.9em;' %>
+            <%= link_to '経営理念', root_path('#'), style: 'font-size: 0.9em;' %>
           </li>
         </ul>
       </div>
     </div>
-
-    <%# <div class="row">
-      <h3><img src="<%= image_path('#') %>
-      <%# <p>AgileVentures - Crowdsourced Learning</p>
-    </div> %>
   </div>
 
   <div class="col-sm-5 contact">
     <h3 class="footer_header">
-      Contact us
+      お問い合わせ
     </h3>
     <p>Send a my email to <%= mail_to '#', 'e-mail' %>.</p>
-    <p>ここに住所とか入れたい</p>
+    <p>ほげ県ホゲホゲ市ホゲ区</p>
   </div>
 </div>

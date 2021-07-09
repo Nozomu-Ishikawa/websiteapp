@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :reviews
+
+  resources :games
+
 end
