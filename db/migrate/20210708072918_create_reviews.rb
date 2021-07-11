@@ -4,9 +4,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.float :rate
       t.text :body
-      t.integer :play_time
+      t.string :image
       t.references :user, foreign_key: true
-      t.references :game, foreign_key: true
 
       t.timestamps
     end

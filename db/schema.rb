@@ -10,23 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_08_072918) do
+ActiveRecord::Schema.define(version: 2021_07_10_104801) do
+
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category", default: 0
+    t.text "description"
+    t.string "title"
+    t.text "body"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "browsing_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_browsing_histories_on_game_id"
+    t.index ["user_id"], name: "index_browsing_histories_on_user_id"
+  end
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "category", null: false
-    t.string "description", null: false
-    t.bigint "user_id"
+    t.string "game_brand", default: "0"
+    t.string "description"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
+    t.string "game_title"
+    t.string "game_type"
+    t.integer "game_brand", default: 0
     t.float "rate"
     t.text "body"
-    t.integer "play_time"
+    t.string "image"
     t.bigint "user_id"
     t.bigint "game_id"
     t.datetime "created_at", precision: 6, null: false
@@ -54,14 +75,15 @@ ActiveRecord::Schema.define(version: 2021_07_08_072918) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
-    t.string "first_name"
-    t.string "last_name"
-    t.text "profile"
+    t.string "name"
+    t.string "profile"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "games", "users"
+  add_foreign_key "browsing_histories", "games"
+  add_foreign_key "browsing_histories", "users"
   add_foreign_key "reviews", "games"
   add_foreign_key "reviews", "users"
   add_foreign_key "sns", "users"
