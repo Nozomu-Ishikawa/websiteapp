@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   resources :reviews
 
-  resources :games
+  resources :games do
+    resources :bookmarks
+    resources :completions
+  end
+
+  resources :bookmarks
 
 end

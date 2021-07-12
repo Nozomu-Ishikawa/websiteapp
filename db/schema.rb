@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_104801) do
+ActiveRecord::Schema.define(version: 2021_07_11_112847) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_07_10_104801) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_bookmarks_on_game_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
   create_table "browsing_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "game_id"
@@ -29,6 +38,15 @@ ActiveRecord::Schema.define(version: 2021_07_10_104801) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_browsing_histories_on_game_id"
     t.index ["user_id"], name: "index_browsing_histories_on_user_id"
+  end
+
+  create_table "completions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_completions_on_game_id"
+    t.index ["user_id"], name: "index_completions_on_user_id"
   end
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,8 +100,12 @@ ActiveRecord::Schema.define(version: 2021_07_10_104801) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "games"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "browsing_histories", "games"
   add_foreign_key "browsing_histories", "users"
+  add_foreign_key "completions", "games"
+  add_foreign_key "completions", "users"
   add_foreign_key "reviews", "games"
   add_foreign_key "reviews", "users"
   add_foreign_key "sns", "users"

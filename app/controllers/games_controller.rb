@@ -10,13 +10,13 @@ class GamesController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = @game.reviews.include(:user).page(params[:page]).order(created_at: :desc)
+    @reviews = @game.reviews.includes(:user).page(params[:page]).order(created_at: :desc)
 
     return unless user_signed_in?
 
     new_browsing_history = @game.browsing_histories.build(user_id: current_user.id)
 
-    if current_user.browsing_history.exists?(game_id: params[:id])
+    if current_user.browsing_histories.exists?(game_id: params[:id])
       old_browsing_history = current_user.browsing_histories.find_by(game_id: params[:id])
       old_browsing_history.destroy
     end

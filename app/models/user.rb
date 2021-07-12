@@ -7,6 +7,10 @@ class User < ApplicationRecord
   
   # アソシエーション
   has_many :sns
+  has_many :reviews, dependent: :destroy
+  has_many :browsing_histories, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :completions, dependent: :destroy
   
          def self.from_omniauth(auth)       # snsから取得した、providerとuidを使って、既存ユーザーを検索
           sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create  # sns認証したことがあればアソシエーションで取得、なければSns_credentialsテーブルにレコード作成
@@ -25,9 +29,7 @@ class User < ApplicationRecord
 
   validates :profile, length: { maximum: 200 }
 
-
-
-  has_many :reviews
+  mount_uploader :image, ImageUploader
   
 # global settings
 

@@ -1,0 +1,71 @@
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 mb-3">
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-body p-4">
+        <div class="row mb-3">
+          <div class="col-md-4 offset-md-4">
+            <h2 class="m-0 font-weight-bold text-center fs-28"><%= @game.title %></h2>
+          </div>
+          <% if user_signed_in? %>
+            <div class="d-sm-block d-none col-md-4 text-right">
+              <%= link_to edit_game_path(@game), class: "btn btn-primary btn-sm" do %>
+                <i class="fas fa-edit"></i> 編集
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="text-center">
+          <div class="image-box">
+            <%=  link_to @game.image.url, 'data-lightbox': @game.image do %>
+              <%= image_tag @game.image.medium.url if @game.image? %>
+            <% end %>
+          </div>
+        </div>
+        <div class="mt-4">
+          <table class="table table-bordered">
+            <tr>
+              <th class="bg-light text-center">ゲーム機会社</th>
+              <td class="text-center"><%= @game.game_brand %></td>
+            </tr>
+            <tr>
+              <th class="bg-light text-center">ゲームタイトル</th>
+              <td class="text-center"><%= @game.title %></td>
+            </tr>
+            <tr>
+              <th class="bg-light text-center">ゲーム説明</th>
+              <td class="text-center"><%= @game.description %></td>
+            </tr>
+          </table>
+        </div>
+        <div id="map" class="mb-3" style='width: 100%; height: 350px;'></div>
+        <div id="bookmarkButton" class="d-inline">
+          <%= render 'bookmarks/button', game: @game %>
+        </div>
+        <div id="completionButton" class="d-inline">
+          <%= render 'completions/button', game: @game %>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        このゲームのレビュー（<%= @reviews.count %>件）
+      </div>
+      <div class="card-body p-4">
+        <%= render 'users/shared/reviews', reviews: @game.reviews.includes(:user).page(params[:page]).order(created_at: :desc) %>
+      </div>
+    </div>
+    <div class="card bg-white border-none shadow-sm mt-3">
+      <div class="card-header font-weight-bold">
+        レビューを書く
+      </div>
+      <div class="card-body p-4">
+        <%= simple_form_for(@review, url: reviews_path(@game.id), method: :post, local: true) do |f| %>
+          <%= render 'users/reviews/form', f: f, review: @review %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>

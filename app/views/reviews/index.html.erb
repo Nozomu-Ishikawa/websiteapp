@@ -8,7 +8,7 @@
         <div class="d-md-block d-none">
           <div class="form-inline">
             <%= search_form_for @q do |f| %>
-              <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 検索したいゲームタイトルを入力..." %>
+              <%= f.search_field :title_or_game_title_or_game_type_or_game_brand_or_body_cont, class: "form-control fa mb-2", placeholder: "\uf002 検索したいゲームタイトルを入力..." %>
               <%= f.submit "検索", class: "btn-re btn-primary" %>
               <%= link_to "リセット", reviews_path, class: "btn-re btn-danger btn-block" %>
             <% end %>
@@ -16,7 +16,7 @@
         </div>
         <div class="d-md-none d-block">
           <%= search_form_for @q do |f| %>
-            <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: " \uf002 検索したいゲームタイトルを入力..." %>
+            <%= f.search_field :title_or_game_title_or_game_type_or_game_brand_or_body_or_body_cont, class: "form-control fa mb-2", placeholder: " \uf002 検索したいゲームタイトルを入力..." %>
             <%= f.submit "検索", class: "btn-re btn-primary btn-block" %>
             <%= link_to "リセット", reviews_path, class: "btn btn-danger btn-block" %>
           <% end %>
@@ -28,7 +28,7 @@
         みんなのレビュー（<%= @reviews.count %>件)
       </div>
       <div class="card-body p-4">
-        <%= render 'users/shared/review', reviews: @reviews %>
+        <%= render 'users/shared/reviews', reviews: @reviews %>
       </div>
     </div>
   </div>

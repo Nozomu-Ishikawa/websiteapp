@@ -51,6 +51,7 @@ gem "activerecord"
 gem 'devise', '~> 4.7'
 gem 'pry-rails'
 gem 'simple_form'
+gem 'jquery-rails'
 
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
