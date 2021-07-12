@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <tr>
+        <th>タイトル</th>
+        <td><%= f.input :title, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>ジャンル</th>
+        <td><%= f.input :game_type, collection: Review.game_types.keys, label: false, input_html: { required: true } %></td>
+      </tr>
+      <tr>
+        <th>評価</th>
+        <td>
+          <div id="star">
+            <%= f.input :rate, as: :hidden, label: false, id: :review_star, input_html: { required: true } %>  
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>本文</th>
+        <td><%= f.input :body, label: false, input_html: { rows: 10, required: true } %></td>
+      </tr>
+      <tr>
+        <th>写真</th>
+        <td>
+          <% (0..2).each do |n| %>
+            <div id="img_field_<%= n %>" onClick="$('#file_<%= n %>').click()" >
+              <% if review.images[n].present? %>
+                <div class="image-box">
+                  <%= image_tag(review.images[n].url) %>
+                </div>
+              <% else %>
+                <i class="fas fa-images"></i>
+              <% end %>
+            </div>
+            <%= f.input :images, as: :file, label: false, input_html: { multiple: true, class: "d-none", id: "file_#{n}" } %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <%= f.submit class: "btn btn-danger btn-sm px-5" %>
+    </div>
+  </div>
+</div>
+<script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'review[rate]',
+    half: true,
+  });
+</script>

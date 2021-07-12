@@ -2,12 +2,12 @@
   <% reviews.each do |review| %>
     <%= link_to review_path(review) do %>
       <div class="reviews">
-        <%# <div class="review-image">
+        <div class="review-image">
           <%= image_tag review.images[0].url if review.images? %>
-        <%# </div> %>
+        </div>
         <div class="review-content">
           <h2 class="fs-22 font-weight-bold">
-            <%= review.title %>（<%= review.id %>）
+            <%= review.title %>（<%= review.game_brand %>）
           </h2>
           <div id="review-rate-<%= review.id %>"></div>
           <script>

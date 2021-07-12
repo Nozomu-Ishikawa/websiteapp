@@ -45,11 +45,13 @@ group :development do
   gem 'binding_of_caller'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "activerecord"
 gem 'devise', '~> 4.7'
 gem 'pry-rails'
+gem 'simple_form'
+gem 'jquery-rails'
 
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
@@ -59,7 +61,21 @@ gem 'omniauth-github'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem 'kaminari'
-gem 'dotenv-rails'
-gem 'ransack'
 gem "gretel"
+
+# search
+gem 'ransack'
+
+# Pagenation
+gem 'kaminari'
+
+#Session
+gem 'bcrypt', '~> 3.1.7'
+
+# ImageUpload
+gem 'fog-aws'
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Configuration Setting
+gem 'dotenv-rails'
