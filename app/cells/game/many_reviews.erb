@@ -1,0 +1,30 @@
+<div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    人気のゲームタイトル
+  </div>
+  <div class="card-body p-4">
+    <div class="row">
+      <% if @games.any? %>
+        <% @games.each_with_index do |game, i| %>
+          <div class="col-md-4 col-sm-6 pb-4">
+            <%= link_to game_path(game) do %>
+              <div class="card h-100">
+                <div class="card-img-top">
+                  <%= image_tag game.image.url if game.image? %>
+                </div>
+              	<div class="card-body">
+              		<p class="card-title font-weight-bold"><%= "#{i+1}位:" %> <%= game.title %>（<%= game.game_brand %>）</p>
+              		<p class="fs-12">（<%= game.reviews.count %>件のレビュー）</p>
+              	</div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-md-12">
+          <p class="text-center">まだ登録されていません</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -88,10 +88,24 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
+    cells (4.1.7)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      tilt (>= 1.4, < 3)
+      uber (< 0.2.0)
+    cells-erb (0.1.0)
+      cells (~> 4.0)
+      erbse (>= 0.1.1)
+    cells-rails (0.1.4)
+      actionpack (>= 5.0)
+      cells (>= 4.1.6, < 5.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug_inspector (1.1.0)
+    declarative-builder (0.1.0)
+      declarative-option (< 0.2.0)
+    declarative-option (0.1.0)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -102,6 +116,10 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    email_validator (2.2.3)
+      activemodel
+    erbse (0.1.4)
+      temple
     erubi (1.10.0)
     excon (0.84.0)
     execjs (2.8.1)
@@ -308,6 +326,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    temple (0.8.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -316,6 +335,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    uber (0.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -344,8 +364,11 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
+  cells-erb
+  cells-rails
   devise (~> 4.7)
   dotenv-rails
+  email_validator
   fog-aws
   font-awesome-sass
   gretel

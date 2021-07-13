@@ -16,6 +16,14 @@
           </div>
         </div>
       </section>
+      <div class="col-md-8">
+    <%# <%= cell(:information).(:recent_informations) %>
+    <%= cell(:game).(:many_reviews) %>
+    <%= cell(:review).(:some_reviews) %>
+  </div>
+  <div class="col-md-4">
+    <%= render partial: 'users/shared/sidemenu' %>
+  </div>
     </li>
     <%# <%= render ab_test :landing_page_options %>
   </ul>

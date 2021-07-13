@@ -59,9 +59,14 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 
+gem 'cells-erb'
+gem 'cells-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem "gretel"
+
+# Authentication
+gem 'email_validator'
 
 # search
 gem 'ransack'

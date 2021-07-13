@@ -1,22 +1,68 @@
-<div class="login">
-  <div class="login-message"><span>Let's login!!</span></div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.email_field :email, autofocus: true, placeholder: 'Enter email', class: 'form-control input-lg' %>
+<div class="row pt-3 pb-5">
+  <div class="col-md-4 order-md-1">
+    <div class="card bg-white border-none mb-3">
+      <div class="card-header font-weight-bold">
+        テストユーザーとしてログイン
       </div>
-      <div class="field">
-        <%= f.password_field :password, placeholder: 'Enter password', class: 'form-control input-lg' %>
+      <div class="card-body p-4">
+        <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+          <%= f.hidden_field :email, value: "aaa@example.com" %>
+          <%= f.hidden_field :password, value: "12341234" %>
+          <%= button_tag type: 'submit', class:"btn-block btn btn-secondary btn-sm text-white px-5" do %>
+            <i class="fas fa-power-off"></i> お試しログイン
+          <% end %>
+        <% end %>
       </div>
-      <div class='form-group'>
-        <%= f.submit 'Login', class: 'btn-login' %>
+    </div>
+    <div class="card bg-white border-none mb-3">
+      <div class="card-header font-weight-bold">
+        SNSアカウントでログイン
       </div>
-      <%# <div class="social">
-        <%= link_to "twitter", root_path, class: 'tw' %>
-        <%# <%= link_to "github", root_path, class: 'gh' %>
-        <%# <%= link_to "google", root_path, class: 'google' %>
-      <%# </div> %>
-    <% end %>
-    <%= link_to 'トップページへ戻る', root_path, class: "btn-top"%>
-    <%# <%= render "devise/shared/links" %>
+      <div class="card-body p-4">
+        <div class="text-center">
+          <%= link_to auth_at_provider_path(provider: :facebook), class: "btn-block btn btn-fb btn-sm text-white px-5" do %>
+            <i class="fab fa-facebook-square"></i> Facebookでログイン
+          <% end %>
+          <%= link_to auth_at_provider_path(provider: :twitter), class: "btn-block btn btn-tw btn-sm text-white px-5" do %>
+            <i class="fab fa-twitter-square"></i> Twitterでログイン
+          <% end %>
+          <%= link_to auth_at_provider_path(provider: :line), class: "btn-block btn btn-li btn-sm text-white px-5" do %>
+            <i class="fab fa-line"></i> LINEでログイン
+          <% end %>
+        </div>
+        <small>
+          <p class="pt-3">ログインに必要なアカウント情報は次の目的以外では使用されません。また、法令に定められた場合を除き第三者への提供はいたしません。</p>
+          <ul>
+            <li>ユーザーIDとしてアカウントの管理</li>
+            <li>パスワード再発行時の本人確認</li>
+          </ul>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 order-md-2">
+    <div class="card bg-white border-none">
+      <div class="card-header font-weight-bold">
+        メールアドレスとパスワードでログイン
+      </div>
+      <div class="card-body p-4">
+        <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+          <div class="form-group px-5">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, class: "form-control", required: true %>
+          </div>
+          <div class="form-group px-5">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, class: "form-control", required: true %>
+          </div>
+          <div class="text-center">
+            <%= submit_tag "ログインする", class: "btn btn-danger btn-sm px-5" %>
+          </div>
+          <div class="text-center py-3">
+            <%= link_to "パスワードを忘れた方はこちら", new_password_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
