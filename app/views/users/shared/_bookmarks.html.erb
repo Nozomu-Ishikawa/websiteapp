@@ -1,0 +1,29 @@
+<div class="row">
+  <% if bookmarks.exists? %>
+    <% bookmarks.each do |bookmark| %>
+      <div class="col-md-4 col-sm-6 pb-4">
+        <%= link_to game_path(bookmark.game) do %>
+          <div class="card h-100">
+            <div class="card-img-top">
+              <%= image_tag bookmark.game.image.url if bookmark.game.image? %>
+            </div>
+          	<div class="card-body">
+          		<p class="card-title font-weight-bold"><%= bookmark.game.name %>（<%= bookmark.game.game_brand %>）</p>
+          		<p class="fs-12">（<%= bookmark.game.reviews.count %>件のレビュー）</p>
+          		<% if bookmark.game.completions.exists? %>
+          		  <span class="badge badge-success">プレイ済み</span>
+          		<% else %>
+          		  <span class="badge badge-danger">未プレイ</span>
+          		<% end %>
+          	</div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+  <div class="col-md-12">
+    <p class="text-center">まだブックマークがありません</p>  
+  </div>
+  <% end %>
+</div>
+<%= paginate bookmarks %>

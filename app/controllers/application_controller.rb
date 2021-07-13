@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:uid, :provider])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :uid, :provider])
     devise_parameter_sanitizer.permit(:account_update, keys: [:last_name, :first_name, :profile])
   end
 
