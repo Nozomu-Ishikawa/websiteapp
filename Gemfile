@@ -53,6 +53,9 @@ gem 'pry-rails'
 gem 'simple_form'
 gem 'jquery-rails'
 
+gem 'devise-i18n'
+
+
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'

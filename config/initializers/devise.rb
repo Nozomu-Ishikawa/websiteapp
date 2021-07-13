@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -252,7 +252,7 @@ Devise.setup do |config|
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  # config.sign_out_all_scopes = true
+  config.sign_out_all_scopes = true
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
@@ -269,7 +269,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
+  # config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
   # config.omniauth :github, ENV["GITHUB_ID"], ENV["GITHUB_SECRET"], scope: "user:email"
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

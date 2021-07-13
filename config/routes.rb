@@ -3,10 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'users#index'
 
-  resources :users do
-    resources :profiles, only: :show
-  end
-
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -23,7 +19,7 @@ Rails.application.routes.draw do
   resources :bookmarks
 
   namespace :users do
-    resources :profiles, only: %i[show]
+    resources :profiles, only: :show
   end
 
   resources :ranking, only: %i[index]
