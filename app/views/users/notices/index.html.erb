@@ -1,0 +1,30 @@
+<div class="row pt-3 pb-5">
+  <div class="col-md-8">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-header font-weight-bold">
+        新着情報
+      </div>
+      <div class="card-body p-0">
+        <% @notices.each do |notice| %>
+          <div class="list-group list-group-flush">
+            <div class="list-group-item">
+              <p class="text-info font-weight-bold"><%= natice.title %></p>
+              <p><%= simple_format(notice.body) %></p>
+              <div class="text-center">
+                <div class="image-box">
+                  <%=  link_to notice.image.url, 'data-lightbox': notice.image do %>
+                    <%= image_tag notice.image.medium.url if notice.image? %>
+                  <% end %>
+                </div>
+              </div>
+              <p class="text-right"><%= notice.created_at.strftime("%Y年%m月%d日") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>
