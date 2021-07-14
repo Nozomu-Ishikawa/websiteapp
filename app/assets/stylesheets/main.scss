@@ -8,7 +8,6 @@ $theme-main: rgb(79, 227, 241);
 $theme-nav-color: rgba(16, 109, 215, 0.718);
 
 
-
 //  color end
 
 #main {
@@ -88,4 +87,14 @@ label {
 
 .nav-justified a {
   white-space: nowrap;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100\vh;
+}
+
+.image-box img{
+  max-width: 100%;
 }
