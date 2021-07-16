@@ -24,7 +24,7 @@
         <div class="mt-4">
           <table class="table table-bordered">
             <tr>
-              <th class="bg-light text-center">ゲーム機会社</th>
+              <th class="bg-light text-center">ゲーム機種ブランド</th>
               <td class="text-center"><%= @game.game_brand %></td>
             </tr>
             <tr>
@@ -37,7 +37,6 @@
             </tr>
           </table>
         </div>
-        <div id="map" class="mb-3" style='width: 100%; height: 350px;'></div>
         <div id="bookmarkButton" class="d-inline">
           <%= render 'bookmarks/button', game: @game %>
         </div>
@@ -60,7 +59,7 @@
       </div>
       <div class="card-body p-4">
         <%= simple_form_for(@review, url: reviews_path(@game.id), method: :post, local: true) do |f| %>
-          <%= render 'users/reviews/form', f: f, review: @review %>
+          <%= render 'reviews/form', f: f, review: @review %>
         <% end %>
       </div>
     </div>

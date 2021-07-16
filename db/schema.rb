@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_081657) do
+ActiveRecord::Schema.define(version: 2021_07_15_100819) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_081657) do
   end
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "game_brand", default: "0"
+    t.string "title"
+    t.integer "game_brand", default: 0
     t.string "description"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
@@ -78,11 +78,13 @@ ActiveRecord::Schema.define(version: 2021_07_13_081657) do
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "game_title"
-    t.string "game_type"
+    t.integer "interesting", default: 0
+    t.integer "gametype", default: 0
+    t.integer "difficulty", default: 0
     t.integer "game_brand", default: 0
     t.float "rate"
     t.text "body"
-    t.string "image"
+    t.string "images"
     t.bigint "user_id"
     t.bigint "game_id"
     t.datetime "created_at", precision: 6, null: false

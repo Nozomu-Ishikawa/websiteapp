@@ -18,12 +18,27 @@
  
 
  @import "global/*";
+
  @import "layout/*";
- @import "mixins/*";
- @import "utilities/*";
+
+//  users settings
+ @import "users/edit";
+ @import "users/form";
+ @import "users/games";
+ @import "users/login_logout";
+ @import "users/main_menu";
+ @import "users/reviews";
+ @import "users/round_banners";
+ @import "users/setting_variables";
+//  users settings
+
+// global settings
+//  @import "mixins/*";
+//  @import "utilities/*";
  @import "vendor/*";
+ // global settings
 
 //  awesome-font
  @import "font-awesome-sprockets";
  @import "font-awesome";
-
+//  awesome-font

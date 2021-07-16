@@ -25,7 +25,7 @@
             <%= search_form_for @q do |f| %>
               <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
               <%= f.submit "検索", class: "btn-re btn-primary" %>
-              <%= link_to "リセット", reviews_path, class: "btn-re btn-danger btn-block" %>
+              <%= link_to "リセット", games_path, class: "btn-re btn-danger btn-block" %>
             <% end %>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <%= search_form_for @q do |f| %>
             <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
             <%= f.submit "検索", class: "btn-re btn-primary btn-block" %>
-            <%= link_to "リセット", reviews_path, class: "btn btn-danger btn-block" %>
+            <%= link_to "リセット", games_path, class: "btn btn-danger btn-block" %>
           <% end %>
         </div>
       </div>
