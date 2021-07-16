@@ -1,0 +1,117 @@
+
+$body-bg: #FCFCFC;
+$border: #DEE2E6;
+
+$white: #fff;
+$dark: #343A40;
+$pink: #fff0f5;
+$gray: #E8ECF1;
+$light-gray: #F6F8FA;
+$dark-gray: #aaa;
+$blue: #1155D4;
+$light-blue: #ADD8E6;
+$shadow: #999;
+
+$facebook: #4267B2;
+$twitter: #2CA7E0;
+$line: #00B300;
+$youtube: #CC0000;
+$google: #dd4b39;
+$whatsapp: #39DA56;
+$viadeo: #EE7252;
+$vimeo: #46BAE9;
+$pinterest: #DF0019;
+
+.btn-fb {
+  text-align: center;
+  background-color: $facebook;
+}
+
+.btn-tw {
+  text-align: center;
+  background-color: $twitter;
+}
+
+.btn-li {
+  text-align: center;
+  background-color: $line;
+}
+
+.social-btn-pc {
+    margin: 30px auto;
+    text-align: center;
+    
+  .facebook {
+    background-color: $facebook;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+  
+  .twitter {
+    background-color: $twitter;
+    
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+  
+  .line {
+    background-color: $line;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    padding: 7px 40px;
+  }
+}
+
+.social-btn-sp {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.fa-twitter-square {
+  color: $twitter;
+}
+  
+.fa-facebook-square {
+  color: $facebook;
+}
+
+.fa-line {
+  color: $line;
+}
+
+.fa-whatsapp-square {
+  color: $whatsapp;
+}
+
+.fa-youtube-square {
+  color: $youtube;
+}
+
+.fa-google-plus-square {
+  color: $google;
+}
+
+.fa-viadeo-square {
+  color: $viadeo;
+}
+
+.fa-vimeo-square {
+  color: $vimeo;
+}
+
+.fa-pinterest-square {
+  color: $pinterest;
+}

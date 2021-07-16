@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :only_user, except: %i[index show]
-  before_action :set_shop, only: %i[show edit update]
+  before_action :set_game, only: %i[show edit update]
 
   def index
     @q = Game.ransack(params[:q])
@@ -42,9 +42,19 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def edit; end
+
+  def update
+    return render :edit unless @game.update(game_params)
+
+    flash[:success] = 'ゲーム情報を更新しました'
+    redirect_to game_path(@game)
+  end
+
+
   private
 
-  def set_shop
+  def set_game
     @game = Game.find(params[:id])
   end
 

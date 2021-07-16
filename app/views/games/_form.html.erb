@@ -6,7 +6,7 @@
         <td><%= f.input :title, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
-        <th>ゲーム会社</th>
+        <th>ブランド</th>
         <td><%= f.input :game_brand, collection: Game.game_brands.keys, label: false, input_html: { required: true } %></td>
       </tr>
       <tr>
@@ -42,7 +42,7 @@
       }
     }
   
-    $("#ramen_shop_image").change(function(){
+    $("#game_image").change(function(){
       readURL(this);
     });
   });

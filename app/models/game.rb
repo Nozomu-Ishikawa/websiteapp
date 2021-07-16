@@ -2,6 +2,7 @@ class Game < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :browsing_histories, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   has_many :completions, dependent: :destroy
 
 
