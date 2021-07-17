@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div class="container">  
+    <div class="row pt-3 pb-5">
+      <div class="col-md-8 order-md-2 mb-4">
+        <div class="card bg-white border-none shadow-sm">
+          <div class="card-header font-weight-bold">
+            マイページ
+          </div>
+          <div class="card-body p-4">
+            <div class="user">
+              <div class="image">
+                <%= image_tag(current_user.image.url) if current_user.image %>
+              </div>
+            </div>
+            <p class="text-center fs-26 p-2"><%= current_user.name %></p>
+            <div class="text-center">
+              <%= current_user.profile? ? simple_format(current_user.profile) : '自己紹介文を入力してください。' %>
+            </div>
+            <div class="mt-4">
+              <table class="table table-bordered">
+                <tr class="success">
+                  <th class="text-center">投稿したレビュー</th>
+                  <td class="text-center"><u><%= current_user.reviews.count %>件</u></td>
+                </tr>
+                <tr class="success">
+                  <th class="text-center">お気に入りレビュー</th>
+                  <td class="text-center"><u><%= current_user.likes.count %>件</u></td>
+                </tr>
+                <tr>
+                  <th class="text-center">ブックマークに登録したゲーム名</th>
+                  <td class="text-center"><u><%= current_user.bookmarks.count %>件</u></td>
+                </tr>
+                <tr>
+                  <th class="text-center">プレイしたゲーム名</th>
+                  <td class="text-center"><u><%= current_user.completions.count %>件</u></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <%= render 'myaccount/sp_menu' %>
+      </div>
+      <div class="col-md-4 order-md-1">
+        <%= render 'myaccount/sidebar' %>
+      </div>
+    </div>
+  </div>
+</div>

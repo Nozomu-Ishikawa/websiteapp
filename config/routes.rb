@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    patch "/myaccount/password/update" => "password#updater"
   end
 
   scope module: :users do
@@ -27,4 +28,19 @@ Rails.application.routes.draw do
 
   resources :ranking, only: %i[index]
 
+  namespace :myaccount do
+    get :reviews
+    get :bookmarks
+    get :schedules
+    get :profile
+    get :email
+    get :password
+  end
+
+  scope :myaccount do
+    resources :dashboard, only: %i[index]
+    resources :profiles, only: %i[update]
+    resources :email, only: %i[update]
+    resources :password, only: %i[update]
+  end
 end

@@ -1,53 +1,55 @@
-<div class="row pt-3 pb-5">
-  <div class="col-md-8 mb-3">
-    <% if user_signed_in? %>
+<div class="wrapper">  
+  <div class="row pt-3 pb-5">
+    <div class="col-md-8 mb-3">
+      <% if user_signed_in? %>
+        <div class="card bg-white border-none shadow-sm mb-3">
+          <div class="card-header font-weight-bold">
+            ゲーム情報の追加
+          </div>
+          <div class="card-body">
+            <%= link_to new_game_path, class: "btn-block btn-re btn-success" do %>
+              <i class="far fa-edit"></i> 追加する
+            <% end %>
+            <small>
+              <p class="pt-3">※まだデータベースに情報が無い場合はこちらから追加をお願いします。</p>
+            </small>
+          </div>
+        </div>
+      <% end %>
       <div class="card bg-white border-none shadow-sm mb-3">
         <div class="card-header font-weight-bold">
-          ゲーム情報の追加
+          フリーワードから探す
         </div>
-        <div class="card-body">
-          <%= link_to new_game_path, class: "btn-block btn-re btn-success" do %>
-            <i class="far fa-edit"></i> 追加する
-          <% end %>
-          <small>
-            <p class="pt-3">※まだデータベースに情報が無い場合はこちらから追加をお願いします。</p>
-          </small>
-        </div>
-      </div>
-    <% end %>
-    <div class="card bg-white border-none shadow-sm mb-3">
-      <div class="card-header font-weight-bold">
-        フリーワードから探す
-      </div>
-      <div class="card-body p-4">
-        <div class="d-md-block d-none">
-          <div class="form-inline">
+        <div class="card-body p-4">
+          <div class="d-md-block d-none">
+            <div class="form-inline">
+              <%= search_form_for @q do |f| %>
+                <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
+                <%= f.submit "検索", class: "btn-re btn-primary" %>
+                <%= link_to "リセット", games_path, class: "btn-re btn-danger btn-block" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="d-md-none d-block">
             <%= search_form_for @q do |f| %>
               <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
-              <%= f.submit "検索", class: "btn-re btn-primary" %>
-              <%= link_to "リセット", games_path, class: "btn-re btn-danger btn-block" %>
+              <%= f.submit "検索", class: "btn-re btn-primary btn-block" %>
+              <%= link_to "リセット", games_path, class: "btn btn-danger btn-block" %>
             <% end %>
           </div>
         </div>
-        <div class="d-md-none d-block">
-          <%= search_form_for @q do |f| %>
-            <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
-            <%= f.submit "検索", class: "btn-re btn-primary btn-block" %>
-            <%= link_to "リセット", games_path, class: "btn btn-danger btn-block" %>
-          <% end %>
+      </div>
+      <div class="card bg-white border-none shadow-sm mb-3">
+        <div class="card-header font-weight-bold">
+          ゲーム一覧（<%= @games.count %>件）
+        </div>
+        <div class="card-body p-4">
+          <%= render 'users/shared/games', games: @games %>
         </div>
       </div>
     </div>
-    <div class="card bg-white border-none shadow-sm mb-3">
-      <div class="card-header font-weight-bold">
-        ゲーム一覧（<%= @games.count %>件）
-      </div>
-      <div class="card-body p-4">
-        <%= render 'users/shared/games', games: @games %>
-      </div>
+    <div class="col-md-4">
+      <%= render 'users/shared/sidemenu' %>
     </div>
-  </div>
-  <div class="col-md-4">
-    <%= render 'users/shared/sidemenu' %>
   </div>
 </div>

@@ -4,7 +4,7 @@
 </style>
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">
-      Game　Reviews
+      Game Reviews
     </a>
 
     <div id="account-controls" class="hidden-xs pull-right">
@@ -12,9 +12,9 @@
       <div class="login-signup">
         <ul class="dropdwn">
           <li>
-            <%= current_user.email %>
+            <%= current_user.name %>
             <ul class="dropdwn_menu">
-              <a href="<%=  users_profile_path(current_user) %>">
+              <a href="<%=  dashboard_index_path %>">
                 <li>
                 <i class="fa fa-user fa-custom-accounts"></i>
                 My Account</li>
