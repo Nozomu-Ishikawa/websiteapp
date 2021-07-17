@@ -18,9 +18,6 @@ class UsersController < ApplicationController
 
   private
 
-  # def customer_params
-  #   params.require(:user).permit().merge(user_id: current_user.id)
-  # end
 
   def set_command
     @user = current_user

@@ -27,7 +27,7 @@
             <%= render 'users/shared/reviews', reviews: @user.reviews.page(params[:page]).order(created_at: :desc) %>
           </div>
           <div id="tab2" class="tab-pane">
-            <%= render 'users/shared/bookmarks', bookmarks: @user.bookmarks.includes(:ramen_shop).page(params[:page]).order(created_at: :desc) %>
+            <%= render 'users/shared/bookmarks', bookmarks: @user.bookmarks.includes(:game).page(params[:page]).order(created_at: :desc) %>
           </div>
         </div>
       </div>

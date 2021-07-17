@@ -15,3 +15,23 @@
   color: white;
   width: 130px;
 }
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.card-body>.row {
+  display: flex;
+
+  .col-md-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+}
+
+.card-img-top>img {
+    width: 100%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}

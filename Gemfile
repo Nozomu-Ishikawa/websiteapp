@@ -67,6 +67,7 @@ gem 'cells-erb'
 gem 'cells-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'simple_calendar'
 gem "gretel"
 
 # Authentication

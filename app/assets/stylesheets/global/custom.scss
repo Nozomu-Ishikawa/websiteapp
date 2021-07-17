@@ -26,11 +26,18 @@ $theme-darker: #eee;
 
 // -- focus action --//
 
-html, body {
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.container {
+  max-width: 960px;
+}
+
+main {
   width: 100%;
   height: 100%;
   min-height: 101%;
-  background-color: $off-white;
 
   -webkit-font-smoothing: antialiased;
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -63,7 +70,7 @@ h1, h2, h3, h4 {
   color: $black;
 }
 
-p, a, ul, li {
+p{
   line-height: 1.4em;
 }
 
@@ -102,19 +109,20 @@ strong {
   text-transform: lowercase;
 }
 
-.fa {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-  text-align: center;
-}
-.vote_button {
-  width: 12px;
-  height: 12px;
-}
+// .fa {
+//   width: 24px;
+//   height: 24px;
+//   display: inline-block;
+//   text-align: center;
+// }
 
-#help-link {
-  float: right;
-  padding-right: 25%;
-  display: block;
-}
+// .vote_button {
+//   width: 12px;
+//   height: 12px;
+// }
+
+// #help-link {
+//   float: right;
+//   padding-right: 25%;
+//   display: block;
+// }

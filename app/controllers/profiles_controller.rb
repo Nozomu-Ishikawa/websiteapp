@@ -1,4 +1,4 @@
-class Users::ProfilesController < ApplicationController
+class ProfilesController < ApplicationController
 
   before_action :only_user
 
