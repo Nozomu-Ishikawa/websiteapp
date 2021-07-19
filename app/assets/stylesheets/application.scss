@@ -10,34 +10,34 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require simple_calendar
  *= require_tree .
  *= require_self
  */
 
  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
  
+ @import "bootstrap";
 
- @import "global/*";
-
- @import "layout/*";
-
-//  users settings
- @import "users/edit";
- @import "users/form";
- @import "users/games";
- @import "users/login_logout";
- @import "users/main_menu";
- @import "users/reviews";
- @import "users/round_banners";
-//  users settings
-
-// global settings
-//  @import "mixins/*";
-//  @import "utilities/*";
- @import "vendor/*";
- // global settings
-
-//  awesome-font
+ //  awesome-font
  @import "font-awesome-sprockets";
  @import "font-awesome";
 //  awesome-font
+
+ @import "layout/*";
+
+ @import "mixins";
+ 
+ @import "global/*";
+
+ @import "variables";
+ 
+ 
+//  users settings
+ @import "users/custom";
+ @import "users/font-size";
+ @import "users/games";
+ @import "users/home";
+ @import "users/reviews";
+//  users settings
+

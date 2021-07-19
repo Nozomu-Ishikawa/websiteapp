@@ -1,6 +1,5 @@
-
 @import 'mixins';
-@import 'main';
+@import 'variables';
 
 $navbar-padding-y: 48px;
 $navbar-padding-x: 20px;
@@ -14,88 +13,19 @@ $navbar-toggler-padding-y: auto;
 $navbar-toggler-padding-x: auto;
 $small-logo-height: 20px;
 $white: white;
+$theme-nav-color: white;
 
 $nav-color: rgb(0, 0, 0);
 
 $header-height: 60px;
 $header-height: 60px;
 
+$header-height: 60px;
+$navbar-height: 50px;
+$small-logo-height: 26px;
+$small-logo-width: 170px;
+$gravatar-size: 35px;
 
-
-#nav {
-  padding: 0 15px;
-  width: 100%;
-  height: $navbar-padding-y;
-  background-color: $theme-nav-color;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-width: 0;
-  margin: 0;
-  position: relative;
-  
-
-    .row {
-      padding: auto;
-      height: 48px;
-      
-      .col-xs-12 {
-        display: table;
-        justify-content: center;
-        padding: 0 15px;
-        margin: auto;
-        height: auto;
-      }
-
-      .col-xs-12>.navbar-nav>.nav-link>li {
-        display: table-cell;
-        padding: 15px;
-      }
-    }
-
-  &.affix {
-    padding: 0 15px;
-
-    .navbar-nav>li>a {
-      color: $nav-color;
-      background-color: rgb(0, 0, 0);
-      @include css-transition(background-color 0.3s ease);
-  
-      &:hover, &:active, &.active {
-        background-color: #eee;
-      }
-
-      .fa {
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-  
-    
-    .navbar-collapse {
-      width: 100%;
-    }
-    
-    .navbar-toggler {
-      padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
-
-      line-height: 1;
-      background-color: transparent; 
-
-      &:hover {
-        text-decoration: none;
-      }
-    
-      &:focus {
-        text-decoration: none;
-        outline: 0;
-
-      }
-    }
-  }
-
-
-// -- navbar color setting --//
 $navbar-dark-brand-color: rgb(255, 255, 255);
 $navbar-light-brand-hover-color: rgb(66, 53, 53);
 $navbar-light-color: rgb(42, 37, 37);
@@ -114,6 +44,31 @@ $navbar-dark-toggler-icon-bg: #eee;
 $theme-darker: rgba(138, 63, 63, 0.933);
 
 
+#nav {
+  width: 100%;
+  height: $navbar-height;
+  background-color: $theme-dark;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-width: 0;
+  margin: 0;
+  position: relative;
+
+  .navbar-nav>li>a {
+    color: $white;
+    background-color: $theme-dark;
+    @include css-transition(background-color 0.3s ease);
+
+    &:hover, &:active, &.active {
+      background-color: $theme-darker;
+    }
+
+    .fa {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
 
 // --navbar-color setting --//
 .navbar-light {
@@ -126,20 +81,7 @@ $theme-darker: rgba(138, 63, 63, 0.933);
     }
   }
 
-  .navbar-nav {
-    .nav-link>li {
-      color: $navbar-light-color;
-
-      &:hover,
-      &:focus {
-        color: $navbar-light-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-light-disabled-color;
-      }
-    }
-  }
+  
 
   .navbar-toggler {
     color: $navbar-light-color;
@@ -157,69 +99,7 @@ $theme-darker: rgba(138, 63, 63, 0.933);
   }
 }
 
-.navbar-dark {
-  .navbar-brand {
-    color: $navbar-dark-brand-color;
-
-    &:hover,
-    &:focus {
-      color: $navbar-dark-brand-hover-color;
-    }
-  }
-
-  .navbar-nav {
-    .nav-link>li>a {
-      color: $navbar-dark-color;
-
-      &:hover,
-      &:focus {
-        color: $navbar-dark-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-dark-disabled-color;
-      }
-    }
-  }
-
-    .show > .nav-link,
-    .nav-link.active {
-      color: $navbar-dark-active-color;
-    }
-  }
-
-  .navbar-toggler {
-    color: $navbar-dark-color;
-    border-color: $navbar-dark-toggler-border-color;
-  }
-
-  .navbar-toggler-icon {
-    background-image: escape-svg($navbar-dark-toggler-icon-bg);
-  }
-
-  .navbar-text {
-    color: $navbar-dark-color;
-    a,
-    a:hover,
-    a:focus {
-      color: $navbar-dark-active-color;
-    }
-  }
-
-
-
-.nav-link {
-  padding: 0 15px;
-  text-align: right;
-  
-
-  &:hover, &:active {
-    color: $theme-darker;
-  }
-}
-
 #main_header {
-  padding: auto;
   background: $theme-main;
 
   .container {
@@ -250,21 +130,21 @@ $theme-darker: rgba(138, 63, 63, 0.933);
       z-index: 1;
       text-align: center;
       list-style-type: none;
-      margin: 0 auto;
+      margin: 0;
       padding: 0;
       color: #fff;
     }
 
     li{
-      max-width: calc(1200px/5);
+      max-width: calc(1000px/5);
       position: relative;
-      padding: 5px;
+      padding: auto;
       display: block;
       cursor: pointer;
     }
 
     .dropdwn>li{
-      width: 1200px;
+      width: 500px;
       margin: 1px;
       background: $theme-main;
       display: inline-block;
@@ -327,8 +207,5 @@ $theme-darker: rgba(138, 63, 63, 0.933);
         color: $theme-darker;
       }
     }
-  .dropdown {
-    display: inline-block;
-  }
 }
 

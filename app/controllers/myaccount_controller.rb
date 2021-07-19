@@ -7,11 +7,11 @@ class MyaccountController < ApplicationController
     @favorite_reviews = current_user.likes.includes(review: :user).page(params[:page]).order(created_at: :desc)
   end
 
-  # def bookmarks
-  #   @bookmarks = current_user.bookmarks.includes(:game).page(params[:page]).order(created_at: :desc)
-  # end
+  def bookmarks
+    @bookmarks = current_user.bookmarks.includes(:game).page(params[:page]).order(created_at: :desc)
+  end
 
-  def schedule; end
+  def schedules; end
 
   def profile; end
 

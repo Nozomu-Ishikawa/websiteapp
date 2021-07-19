@@ -1,18 +1,3 @@
-@mixin css-transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
-@mixin css-transform($args...) {
-  -webkit-transform: $args;
-  -moz-transform: $args;
-  -ms-transform: $args;
-  -o-transform: $args;
-  transform: $args;
-}
-
 @mixin css-border-radius($args...) {
   -webkit-border-radius: $args;
   -mox-border-radius: $args;

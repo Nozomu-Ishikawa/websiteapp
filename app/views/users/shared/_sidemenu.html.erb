@@ -1,4 +1,7 @@
 <aside>
+  <% if user_signed_in? %>
+    <%= cell(:browsing_history).(:recent_browsing_histories) %>
+  <% end %>
   <div class="d-md-block d-none">
     <div class="card bg-white border-none shadow-sm mb-3">
       <div class="card-header font-weight-bold">

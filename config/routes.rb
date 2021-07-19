@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   scope :myaccount do
     resources :dashboard, only: %i[index]
+    resources :schedules, only: %i[create destroy]
     resources :profiles, only: %i[update]
     resources :email, only: %i[update]
     resources :password, only: %i[update]

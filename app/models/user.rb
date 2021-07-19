@@ -7,6 +7,7 @@ class User < ApplicationRecord
   
   # アソシエーション
   has_many :sns
+  has_many :schedules, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :browsing_histories, dependent: :destroy
   has_many :likes, dependent: :destroy

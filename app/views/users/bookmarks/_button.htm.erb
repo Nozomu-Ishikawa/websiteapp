@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if current_user.bookmarks.find_by(game_id: game.id) %>
+    <%= link_to game_bookmark_path(game_id: game.id, id: game.id), remote: true, method: :delete, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="fas fa-bookmark"></i> ブックマークを削除
+    <% end %>
+  <% else %>
+    <%= link_to game_bookmarks_path(game.id), method: :post, remote: true, class: "btn btn-warning text-white btn-sm" do %>
+      <i class="far fa-bookmark"></i> ブックマークを登録
+    <% end %>
+  <% end %>
+<% end %>

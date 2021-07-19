@@ -1,7 +1,4 @@
-<header class="masthead navbar-light" id="main_header">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-</style>
+<header id="main_header" class="masthead">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">
       Game Reviews
@@ -30,64 +27,60 @@
       </div>
     </div>
     <% else %>
-      <div class="login-signup">
-        <ul class="dropdwn">
-          <li>
-            Hello!guest!
-            <ul class="dropdwn_menu">
-              <a href="<%= new_user_session_path %>">
-                <li>
-                <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
-                Log in</li>
-              </a>
-              <a href="<%= new_user_registration_path %>">
-                <li>
-                <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
-                Sign up</li>
-              </a>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <div class="login-signup">
+      <ul class="dropdwn">
+        <li>
+          Hello!guest!
+          <ul class="dropdwn_menu">
+            <a href="<%= new_user_session_path %>">
+              <li>
+              <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
+              Log in</li>
+            </a>
+            <a href="<%= new_user_registration_path %>">
+              <li>
+              <i class="fas fa-sign-in-alt fa-custom-accounts"></i></i>
+              Sign up</li>
+            </a>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <% end %>
   </div>
 </header>
 
-<div class="navbar navbar-inverse navbar-static-top collapse navbar-collapse hidden-sm navbar-dark navbar-light affix" id="nav">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-9 col-md-10">
-        <ul class="nav navbar-nav nav-justified">
-          <div class="nav-link">
-            <li>
-              <%= link_to reviews_path do %>
-                <i class="fas fa-star"></i> みんなのレビュー
-              <% end %>
-            </li>
-            <li>
-              <%= link_to games_path do %>
-                <i class="fas fa-search"></i> データベース
-              <% end %>
-            </li>
-            <li>
-              <%= link_to ranking_index_path do %>
-                <i class="far fa-star"></i> ランキング
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fas fa-crown"></i> お気に入り
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fab fa-discourse"></i> 掲示板
-              <% end %>
-            </li>
-          </div>
+<div class="d-md-block d-none">
+  <nav class="navbar navbar-expand-md bg-white py-2">
+    <div class="collapse navbar-collapse justify-content-center">
+      <div class="navbar-nav">
+        <ul class="navbar-nav align-items-center ">
+          <li class="nav-item mr-5">
+            <%= link_to reviews_path do %>
+              <i class="fas fa-star"></i> みんなのレビュー
+            <% end %>
+          </li>
+          <li class="nav-item mr-5">
+            <%= link_to games_path do %>
+              <i class="fas fa-search"></i> データベース
+            <% end %>
+          </li>
+          <li class="nav-item mr-5">
+            <%= link_to ranking_index_path do %>
+              <i class="far fa-star"></i> ランキング
+            <% end %>
+          </li>
+          <li class="nav-item mr-5">
+            <%= link_to root_path do %>
+              <i class="fas fa-crown"></i> お気に入り
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
-  </div>
-  </div>
-</div>
+  </nav>
+</div>  
+
+
+
+            

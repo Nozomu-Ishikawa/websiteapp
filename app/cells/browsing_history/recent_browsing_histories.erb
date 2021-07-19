@@ -1,0 +1,18 @@
+<div class="card bg-white border-none shadow-sm mb-3">
+  <div class="card-header font-weight-bold">
+    最近チェックしたタイトル
+  </div>
+  <div class="card-body">
+    <% if @browsing_histories.any? %>
+      <% @browsing_histories.each do |browsing_history| %>
+        <div class="list-group list-group-flush">
+          <%= link_to game_path(browsing_history.game_id) do %>
+            <div class="list-group-item"><%= browsing_history.game.title %>（<%= browsing_history.game.game_brand %>）</div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center">まだ閲覧履歴がありません</p>
+    <% end %>
+  </div>
+</div>

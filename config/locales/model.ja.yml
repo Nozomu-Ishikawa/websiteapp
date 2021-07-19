@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: 'メールアドレス'
+        email_confirmation: '確認用メールアドレス'
+        password: 'パスワード'
+        password_confirmation: '確認用パスワード'
+        name: 'ニックネーム'
+        profile: '自己紹介'
+        image: '写真'
+      review:
+        title: 'タイトル'
+        game_title: 'ゲームタイトル'
+        interesting: '面白さ'
+        gametype: 'ジャンル'
+        difficulty: '難易度'
+        game_brand: '制作会社'
+        rate: '評価'
+        body: '本文'
+        image: '画像'
+      information:
+        title: 'タイトル'
+        body: '本文'
+        image: '画像'
+      schedule:
+        title: '内容'
+        start_time: '日時'
+      article:
+        category: 'カテゴリー'
+        description: 'メタディスクリプション'
+        title: 'タイトル'
+        body: '本文'
+        image: '画像'

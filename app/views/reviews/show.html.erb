@@ -1,6 +1,99 @@
-<dl class="searchbox">
-  <%= search_form_for @q, url: review_path do |f| %>
-    <dt><%= f.text_field :title_cont ,placeholder: '検索するテキストを入力...' %></dt>
-    <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
-  <% end %>
-</dl>
+<div class="row pt-3 pb-5">
+  <div class="col-md-8 review-container mb-3">
+    <div class="card bg-white border-none shadow-sm">
+      <div class="card-body p-4">
+        <div class="row mb-3">
+          <div class="col-md-4 offset-md-4">
+            <h1 class="m-0 font-weight-bold text-center">
+              <%= link_to @review.game, game_path(@review.game) %>
+            </h1>
+          </div>
+          <% if user_signed_in? %>
+            <% if @review.user.id == current_user.id %>
+              <div class="d-sm-block d-none col-md-4 text-right">
+                <%= link_to edit_review_path(@review), class: "btn btn-primary btn-sm" do %>
+                  <i class="fas fa-edit"></i> 編集
+                <% end %>
+                <%= link_to review_path(@review), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger btn-sm" do %>
+                  <i class="fas fa-trash"></i> 削除
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="review-rate-<%= @review.id %>" class="text-center mt-2 mb-4"></div>
+        <% if @review.images.length > 1 %>
+          <div id="slides" class="carousel slide carousel-fade" data-ride="false">
+            <ol class="carousel-indicators">
+              <% @review.images.length.times do |n| %>
+                <li data-target="#slides" data-slide-to="<% n %>"></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                <%= image_tag @review.images[0].url %>
+              </div>
+              <% @review.images.length.times do |n| %>
+                <% if @review.images[n+1] %>
+                  <div class="carousel-item">
+                    <%= image_tag @review.images[n+1].url %>
+                  </div>
+                <% end %>
+              <% end %>
+              <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        <% else %>
+          <div class="text-center image-box">
+            <%= image_tag @review.images[0].url if @review.images[0] %>
+          </div>
+        <% end %>
+        <%= render 'users/shared/social_button', model: @review %>
+        <h2><%= @review.title %></h2>
+        <div class="p-2">
+          <p class="text-info font-weight-bold"><%= @review.created_at.strftime("%Y年%m月%d日") %>投稿</p>
+          <%= simple_format(@review.body) %>
+        </div>
+        <div class="card mt-5">
+          <div class="card-header">このレビューを書いた人</div>
+          <div class="card-body">
+            <div class="reviewer">
+              <div class="reviewer-image">
+                <%= link_to users_profile_path(@review.user) do %>
+                  <%= image_tag @review.user.image.url %>
+                <% end %>
+              </div>
+              <div class="reviewer-profile">
+                <%= link_to users_profile_path(@review.user) do %>
+                  <p class="font-weight-bold"><u><%= @review.user.name %></u></p>
+                <% end %>
+                <p class="clearfix m-0"><%= @review.user.profile %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'users/shared/sidemenu' %>
+  </div>
+</div>
+<script>
+  $('#review-rate-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.rate %>,
+  });
+</script>

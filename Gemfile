@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4'
@@ -52,6 +52,10 @@ gem "activerecord"
 gem 'devise', '~> 4.7'
 gem 'pry-rails'
 gem 'simple_form'
+
+gem 'uglifier'
+gem 'bootstrap', '~> 4.1.1'
+# gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'devise-i18n'
@@ -65,13 +69,15 @@ gem 'omniauth-github'
 
 gem 'cells-erb'
 gem 'cells-rails'
-gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_calendar'
 gem "gretel"
 
 # Authentication
 gem 'email_validator'
+
+# Internationalization
+gem 'rails-i18n'
 
 # search
 gem 'ransack'

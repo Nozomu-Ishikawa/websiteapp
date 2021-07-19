@@ -1,37 +1,43 @@
-// Place all the styles related to the games controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+$body-bg: #FCFCFC;
+$border: #DEE2E6;
 
-.game_search {
-  display: flex;
-}
+$white: #fff;
+$dark: #343A40;
+$pink: #fff0f5;
+$gray: #E8ECF1;
+$light-gray: #F6F8FA;
+$dark-gray: #aaa;
+$blue: #1155D4;
+$light-blue: #ADD8E6;
+$shadow: #999;
 
-.fa-edit {
-  background: black;
-}
+$facebook: #4267B2;
+$twitter: #2CA7E0;
+$line: #00B300;
+$youtube: #CC0000;
+$google: #dd4b39;
+$whatsapp: #39DA56;
+$viadeo: #EE7252;
+$vimeo: #46BAE9;
+$pinterest: #DF0019;
 
-.row>.mb-3>.card>.card-body>.btn-success {
-  background: black;
-  color: white;
-  width: 130px;
-}
-
-.p-4 {
-  padding: 1.5rem !important;
-}
-
-.card-body>.row {
-  display: flex;
-
-  .col-md-4 {
-    -webkit-box-flex: 0;
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%;
+.ramen-shops {	
+  display: flex;	
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;	
+  box-sizing: border-box;	
+  box-shadow: 0 0 2px $shadow;
+  
+  .ramen-shop-image {
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    
+    img {
+      min-width: 100px;
+      max-width: 100%;
+      vertical-align: top;
+    }
   }
-}
-
-.card-img-top>img {
-    width: 100%;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
 }
