@@ -11,7 +11,7 @@ class MyaccountController < ApplicationController
     @bookmarks = current_user.bookmarks.includes(:game).page(params[:page]).order(created_at: :desc)
   end
 
-  def schedules; end
+  def events; end
 
   def profile; end
 

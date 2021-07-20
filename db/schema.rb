@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_041934) do
+ActiveRecord::Schema.define(version: 2021_07_20_060555) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category", default: 0
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2021_07_19_041934) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_completions_on_game_id"
     t.index ["user_id"], name: "index_completions_on_user_id"
+  end
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start_time"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,15 +102,6 @@ ActiveRecord::Schema.define(version: 2021_07_19_041934) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.datetime "start_time"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_schedules_on_user_id"
-  end
-
   create_table "sns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -135,10 +135,10 @@ ActiveRecord::Schema.define(version: 2021_07_19_041934) do
   add_foreign_key "browsing_histories", "users"
   add_foreign_key "completions", "games"
   add_foreign_key "completions", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "likes", "reviews"
   add_foreign_key "likes", "users"
   add_foreign_key "reviews", "games"
   add_foreign_key "reviews", "users"
-  add_foreign_key "schedules", "users"
   add_foreign_key "sns", "users"
 end

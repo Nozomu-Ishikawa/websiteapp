@@ -5,7 +5,7 @@
         予定を入れる
       </div>
       <div class="card-body p-4">
-        <%= simple_form_for(Schedule.new, url: schedules_path, method: :post, local: true) do |f| %>
+        <%= simple_form_for(Event.new, url: events_path, method: :post, local: true) do |f| %>
           <%= f.input :title %>
           <%= f.input :start_time %>
           <div class="text-center">
@@ -19,12 +19,12 @@
         カレンダー
       </div>
       <div class="card-body p-4">
-        <%= month_calendar schedules: current_user.schedules do |date, schedules| %>
+        <%= month_calendar events: current_user.events do |date, events| %>
           <%= date.day %>
-          <% schedules.each do |schedule| %>
+          <% events.each do |event| %>
             <div>
-              <%= schedule.title %>
-              <%= link_to schedule_path(schedule.id), method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+              <%= event.title %>
+              <%= link_to event_path(event.id), method: :delete, data: { confirm: '本当に削除しますか？' } do %>
                 <i class="far fa-times-circle"></i>
               <% end %>
             </div>
