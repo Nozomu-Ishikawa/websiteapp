@@ -5,7 +5,7 @@
         <div class="row mb-3">
           <div class="col-md-4 offset-md-4">
             <h1 class="m-0 font-weight-bold text-center">
-              <%= link_to @review.game, game_path(@review.game) %>
+              <%= link_to @review.game_title, game_path(@review.game) %>
             </h1>
           </div>
           <% if user_signed_in? %>

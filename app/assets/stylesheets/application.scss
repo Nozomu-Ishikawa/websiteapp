@@ -14,30 +14,3 @@
  *= require_tree .
  *= require_self
  */
-
- @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
- 
- @import "bootstrap";
-
- //  awesome-font
- @import "font-awesome-sprockets";
- @import "font-awesome";
-//  awesome-font
-
- @import "layout/*";
-
- @import "mixins";
- 
- @import "global/*";
-
- @import "variables";
- 
- 
-//  users settings
- @import "users/custom";
- @import "users/font-size";
- @import "users/games";
- @import "users/home";
- @import "users/reviews";
-//  users settings
-

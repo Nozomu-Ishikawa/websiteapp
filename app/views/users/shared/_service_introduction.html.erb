@@ -1,0 +1,64 @@
+<% if current_page?(root_path) %>
+  <div class="swiper-container mb-5">
+    <h1>ゲーマのための<br>
+        ゲームのためのサイト。
+    </h1>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <%= image_tag 'FC.jpg'%>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag 'SFC.jpg'%>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag 'N64.jpg'%>
+      </div>
+    </div>
+  </div>
+  <div class="container mb-4">
+    <h2 class="font-weight-bold text-center my-3">Game Reviewersとは？</h1>
+    <p class="text-center mb-5">ゲーマーのためのレビューサイトです（誹謗中傷などの他の方の不快になるような言動や荒らしはお控えください）</p>
+    <div class="row">
+      <div class="col-md-4">
+        <p class="text-center"><i class="fas fa-comments fa-3x"></i></p>
+        <p class="font-weight-bold text-center"><u>リアルタイム性のあるサイト</u></p>
+        <p class="text-center fs-14">ユーザーたちの手によって利便性の高いサイトを作り上げていく事を基本方針としております、業者などはいないためより確実な情報を獲得することができます</p>
+      </div>
+      <div class="col-md-4">
+        <p class="text-center"><i class="fas fa-user-cog fa-3x"></i></p>
+        <p class="font-weight-bold text-center"><u>シンプルな機能性</u></p>
+        <p class="text-center fs-14">「使いやすさ」を重視したサイトであるため初めての方でも簡単です、お気軽にコメントしてください！</p>
+      </div>
+      <div class="col-md-4">
+        <p class="text-center"><i class="fas fa-fire-alt fa-3x"></i></p>
+        <p class="font-weight-bold text-center"><u>さまざまなジャンル</u></p>
+        <p class="text-center fs-14">ゲームは何もユーザーだけではありません、ゲームを作る側も情熱を持って作っています。</p>
+      </div>
+    </div>
+    <% unless user_signed_in? %>
+      <div class="col-md-12 p-4">
+        <div class="text-center">
+          <%= form_with model: User.new, url: login_path, local: true do |f| %>
+            <%= f.hidden_field :email, value: "test@example.com" %>
+            <%= f.hidden_field :password, value: "12341234" %>
+            <%= button_tag type: 'submit', class:"btn btn-secondary text-white px-5" do %>
+              <i class="fas fa-power-off"></i> クイックログイン
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<script>
+  let swipeOption = {
+    loop: true,
+    effect: 'fade',
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    speed: 2000,
+  }
+  new Swiper('.swiper-container', swipeOption);
+</script>
