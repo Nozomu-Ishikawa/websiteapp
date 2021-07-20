@@ -1,27 +1,6 @@
-$body-bg: #FCFCFC;
-$border: #DEE2E6;
 
-$white: #fff;
-$dark: #343A40;
-$pink: #fff0f5;
-$gray: #E8ECF1;
-$light-gray: #F6F8FA;
-$dark-gray: #aaa;
-$blue: #1155D4;
-$light-blue: #ADD8E6;
-$shadow: #999;
 
-$facebook: #4267B2;
-$twitter: #2CA7E0;
-$line: #00B300;
-$youtube: #CC0000;
-$google: #dd4b39;
-$whatsapp: #39DA56;
-$viadeo: #EE7252;
-$vimeo: #46BAE9;
-$pinterest: #DF0019;
-
-.ramen-shops {	
+.games {	
   display: flex;	
   margin-bottom: 20px;
   padding: 20px;
@@ -29,7 +8,7 @@ $pinterest: #DF0019;
   box-sizing: border-box;	
   box-shadow: 0 0 2px $shadow;
   
-  .ramen-shop-image {
+  .game-image {
     margin-right: 20px;
     width: 100px;
     height: 100px;

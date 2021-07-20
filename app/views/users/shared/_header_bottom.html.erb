@@ -1,0 +1,30 @@
+<div class="d-md-block d-none">
+  <nav class="navbar navbar-expand-md bg-white py-2">
+    <div class="collapse navbar-collapse justify-content-center">
+      <div class="navbar-nav">
+        <ul class="navbar-nav align-items-center ">
+          <li class="nav-item mr-5">
+            <%= link_to reviews_path, class: "text-dark" do %>
+              <i class="fas fa-star"></i> みんなのレビュー
+            <% end %>
+          </li>
+          <li class="nav-item mr-5">
+            <%= link_to games_path, class: "text-dark" do %>
+              <i class="fas fa-search"></i> データベース
+            <% end %>
+          </li>
+          <li class="nav-item mr-5">
+            <%= link_to ranking_index_path, class: "text-dark" do %>
+              <i class="fas fa-crown"></i> ランキング
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to articles_path, class: "text-dark" do %>
+              <i class="fas fa-rss"></i> ニュース
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

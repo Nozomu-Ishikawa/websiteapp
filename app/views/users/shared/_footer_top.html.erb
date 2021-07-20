@@ -1,0 +1,80 @@
+<div class="d-md-block d-none">
+  <div class="bg-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="font-weight-bold">ご利用ガイド</p>
+          <p class="fs-14">
+            <%= link_to 'よくある質問', root_path('#') %>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="font-weight-bold">ニュース</p>
+          <p class="fs-14">
+            <%= link_to '目的', root_path('#') %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '開発者メモ', root_path %>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="font-weight-bold">サイト情報</p>
+          <p class="fs-14">
+            <%= link_to '運営会社', root_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '利用規約', root_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'プライバシーポリシー', root_path %>
+          </p>
+        </div>
+        <div class="col-md-3 contact">
+          <h3 class="footer_header">
+            お問い合わせ
+          </h3>
+          <p>Send a my email to <%= mail_to '#', 'e-mail' %>.</p>
+          <p>ほげ県ホゲホゲ市ホゲ区</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-md-none d-block">
+  <div class="bg-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <p class="font-weight-bold">ご利用ガイド</p>
+          <p class="fs-14">
+            <%= link_to 'よくある質問', root_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'お問い合わせ',root_path %>
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="font-weight-bold">ニュース</p>
+          <p class="fs-14">
+            <%= link_to '割引キャンペーン', articles_path(category: 1) %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '新店オープン', articles_path(category: 2) %>
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="font-weight-bold">サイト情報</p>
+          <p class="fs-14">
+            <%= link_to '運営会社', root_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to '利用規約', root_path %>
+          </p>
+          <p class="fs-14">
+            <%= link_to 'プライバシーポリシー', root_path %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

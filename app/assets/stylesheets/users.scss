@@ -1,52 +1,22 @@
-// setting-variables
-$theme-dark: rgba(61, 40, 40, 0.933);
-$nav-color: rgba(255, 255, 255, 0.933);
-$theme-darker: rgba(138, 63, 63, 0.933);
+ @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
+ 
+ @import "bootstrap";
 
-$theme-main: rgb(79, 227, 241);
-$theme-nav-color: rgba(16, 109, 215, 0.718);
-
-$body-bg: #FCFCFC;
-$border: #DEE2E6;
-
-$white: #fff;
-$dark: #343A40;
-$pink: #fff0f5;
-$gray: #E8ECF1;
-$light-gray: #F6F8FA;
-$dark-gray: #aaa;
-$blue: #1155D4;
-$light-blue: #ADD8E6;
-$shadow: #999;
-
-$facebook: #4267B2;
-$twitter: #2CA7E0;
-$line: #00B300;
-$youtube: #CC0000;
-$google: #dd4b39;
-$whatsapp: #39DA56;
-$viadeo: #EE7252;
-$vimeo: #46BAE9;
-$pinterest: #DF0019;
-// setting-variables
-
-
-
-button, input {
-  overflow: visible;
-}
-
-#main {
-  padding-top: 3em;
-}
-
-.alert {
-  margin-top: 5px;
-}
-
-.nav-justified a {
-  white-space: nowrap;
-}
+ //  awesome-font
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+//  awesome-font
+ 
+ @import "global/*";
+ 
+//  users settings
+ @import "users/custom";
+ @import "users/font-size";
+ @import "users/games";
+ @import "users/home";
+ @import "users/reviews";
+ @import "users/social";
+//  users settings
 
 body {
   background: $body-bg;
@@ -65,7 +35,6 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100\vh;
-  width: 100%;
 }
 
 .image-box img{
@@ -102,7 +71,9 @@ footer {
     text-decoration: none;
     
     &:before {
+      font-family: 'Font Awesome 5 Free';
       font-weight: 900;
+      content: '\f077';
       font-size: 25px;
       color: #fff;
       position: absolute;
