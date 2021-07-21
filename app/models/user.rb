@@ -22,10 +22,9 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   
-         def self.from_omniauth(auth)       # snsから取得した、providerとuidを使って、既存ユーザーを検索
-          sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create  # sns認証したことがあればアソシエーションで取得、なければSns_credentialsテーブルにレコード作成
+         def self.from_omniauth(auth)
+          sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create 
         
-          # snsのuser or usersテーブルに対し、SNS認証で取得したメールアドレスが登録済みの場合は、取得 or なければビルド(保存はしない)
           user = sns.user || User.where(email: auth.info.email).first_or_initialize(
             name: auth.info.name,
             email: auth.info.email
@@ -42,6 +41,12 @@ class User < ApplicationRecord
   enum role: { user: 0, admin: 200 }
 
   mount_uploader :image, ImageUploader
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 
   def self.order_by_reviews
     User.select('users.*', 'count(reviews.id) AS reviews').left_joins(:reviews).group('users.id').order('reviews DESC')

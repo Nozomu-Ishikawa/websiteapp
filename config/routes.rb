@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
-    patch "/myaccount/password/update" => "password#updater"
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
   scope module: :users do
