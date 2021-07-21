@@ -1,20 +1,16 @@
 <% if current_page?(root_path) %>
-  <div class="swiper-container mb-5">
-    <h1>ゲーマのための<br>
-        ゲームのためのサイト。
-    </h1>
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <%= image_tag 'FC.jpg'%>
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumtron-heading">Welcome to this site!</h1>
+        <p class="lead text-muted">
+        面白いと思ったゲームをレビューしてみんなと共有しよう！
+        </p>
+        <p>
+          <a href="/reviews" class="btn btn-primary my-2">みんなのレビューを見てみよう</a>
+          <a href="/users/sign_in" class="btn btn-primary my-2">早速ログインしてみよう！</a>
+        </p>
       </div>
-      <div class="swiper-slide">
-        <%= image_tag 'SFC.jpg'%>
-      </div>
-      <div class="swiper-slide">
-        <%= image_tag 'N64.jpg'%>
-      </div>
-    </div>
-  </div>
+    </section>
   <div class="container mb-4">
     <h2 class="font-weight-bold text-center my-3">Game Reviewersとは？</h1>
     <p class="text-center mb-5">ゲーマーのためのレビューサイトです（誹謗中傷などの他の方の不快になるような言動や荒らしはお控えください）</p>

@@ -1,3 +1,5 @@
+<% breadcrumb :review %>
+<%= breadcrumbs separator: " &rsaquo; " %>
   <div class="row pt-3 pb-5">
     <div class="col-md-8 mb-3">
       <div class="card bg-white border-none shadow-sm mb-3">
@@ -5,14 +7,12 @@
           フリーワードから探す
         </div>
         <div class="card-body p-4">
-          <div class="d-md-block d-none">
-            <div class="form-inline">
+          <div class="input-group">
               <%= search_form_for @q do |f| %>
-                <%= f.search_field :title_or_game_title_or_game_brand_or_gametype_or_body_cont, class: "form-control fa mb-2", placeholder: "\uf002 検索したいゲームタイトルなどを入力..." %>
-                <%= f.submit "検索", class: "btn-re btn-primary" %>
-                <%= link_to "リセット", reviews_path, class: "btn-re btn-danger btn-block" %>
+                <%= f.search_field :title_or_game_title_or_game_brand_or_gametype_or_body_cont, class: "form-control fa mb-2", placeholder: "\uf002 検索したいタイトルなどを入力..." %>
+                <%= f.submit "検索", class: "btn btn-success" %>
+                <%= link_to "リセット", reviews_path, class: "btn btn-success" %>
               <% end %>
-            </div>
           </div>
           <div class="d-md-none d-block">
             <%= search_form_for @q do |f| %>

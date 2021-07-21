@@ -1,3 +1,5 @@
+<% breadcrumb :login %>
+<%= breadcrumbs separator: " &rsaquo; " %>
 <div class="row pt-3 pb-5">
   <div class="col-md-4 order-md-1">
     <div class="card bg-white border-none mb-3">
@@ -5,11 +7,9 @@
         テストユーザーとしてログイン
       </div>
       <div class="card-body p-4">
-        <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
-          <%= f.hidden_field :email, value: "test@testtest.com" %>
-          <%= f.hidden_field :password, value: "12341234" %>
+        <%= link_to users_guest_sign_in_path, method: :post do%>
           <%= button_tag type: 'submit', class:"btn-block btn btn-secondary btn-sm text-white px-5" do %>
-            <i class="fas fa-power-off"></i> お試しログイン
+            <i class="fas fa-power-off"></i> クイックログイン
           <% end %>
         <% end %>
       </div>
@@ -18,6 +18,18 @@
       <div class="card-header font-weight-bold">
         SNSアカウントでログイン
       </div>
+      <div class="card-body p-4">
+        <div class="text-center">
+          <%= link_to root_path, class: "btn-block btn btn-fb btn-sm text-white px-5" do %>
+            <i class="fab fa-facebook-square"></i> Facebookでログイン
+          <% end %>
+          <%= link_to root_path, class: "btn-block btn btn-tw btn-sm text-white px-5" do %>
+            <i class="fab fa-twitter-square"></i> Twitterでログイン
+          <% end %>
+          <%= link_to root_path, class: "btn-block btn btn-li btn-sm text-white px-5" do %>
+            <i class="fab fa-line"></i> LINEでログイン
+          <% end %>
+        </div>
         <small>
           <p class="pt-3">ログインに必要なアカウント情報は次の目的以外では使用されません。また、法令に定められた場合を除き第三者への提供はいたしません。</p>
           <ul>
@@ -46,9 +58,9 @@
           <div class="text-center">
             <%= submit_tag "ログインする", class: "btn btn-danger btn-sm px-5" %>
           </div>
-          <%# <div class="text-center py-3">
-            <%= link_to "パスワードを忘れた方はこちら", new_password_path %>
-          <%# </div> %>
+          <div class="text-center py-3">
+            <%= link_to "パスワードを忘れた方はこちら", new_user_password_path %>
+          </div>
         <% end %>
       </div>
     </div>

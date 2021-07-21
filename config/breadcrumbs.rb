@@ -1,5 +1,20 @@
-crumb :root do
+crumb :top do
   link "Home", root_path
+end
+
+crumb :login do
+  link "ログイン", new_user_session_path
+  parent :top
+end
+
+crumb :signup do
+  link "サインアップ", new_user_registration_path
+  parent :top
+end
+
+crumb :review do
+  link "レビュ一覧", reviews_path
+  parent :top
 end
 
 # crumb :projects do
