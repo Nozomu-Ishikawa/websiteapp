@@ -35,8 +35,18 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # 開発環境でメールを送るためのホストの設定
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "nozomuishikawa4646@gmail.com", 
+    :password => "11eyescross", 
+    :authentication => 'login'
+  }
 
   config.action_mailer.perform_caching = false
 

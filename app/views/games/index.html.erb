@@ -7,7 +7,7 @@
             ゲーム情報の追加
           </div>
           <div class="card-body">
-            <%= link_to new_game_path, class: "btn-block btn-re btn-success" do %>
+            <%= link_to new_game_path, class: "btn-block btn btn-successs" do %>
               <i class="far fa-edit"></i> 追加する
             <% end %>
             <small>
@@ -25,8 +25,8 @@
             <div class="form-inline">
               <%= search_form_for @q do |f| %>
                 <%= f.search_field :title_cont, class: "form-control fa mb-2", placeholder: "\uf002 ゲーム名などを入力..." %>
-                <%= f.submit "検索", class: "btn-re btn-primary" %>
-                <%= link_to "リセット", games_path, class: "btn-re btn-danger btn-block" %>
+                <%= f.submit "検索", class: "btn btn-success" %>
+                <%= link_to "リセット", games_path, class: "btn btn-success" %>
               <% end %>
             </div>
           </div>
