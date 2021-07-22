@@ -1,0 +1,7 @@
+service:
+  default_host: 'localhost:3000'
+  name: 'Game Reviewers'
+
+slack:
+  webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
+  channel: <%= ENV['SLACK_CHANNEL_NAME'] %>

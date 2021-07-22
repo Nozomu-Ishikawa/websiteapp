@@ -92,3 +92,8 @@ gem 'mini_magick'
 
 # Configuration Setting
 gem 'dotenv-rails'
+gem 'config'
+
+# Notification
+gem 'exception_notification'
+gem 'slack-notifier'
