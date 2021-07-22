@@ -66,8 +66,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => "app222321953@heroku.com",
-      :password => "xrt0opic0822",
+      :user_name => ENV['SENDGRID_ACCOUNT'],
+      :password => ENV['SEDGRID_ID'],
       :domain => "heroku.com",
       :address => "smtp.sendgrid.net",
       :port => 587,
