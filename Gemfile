@@ -86,8 +86,8 @@ gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'bcrypt', '~> 3.1.7'
 
 # ImageUpload
-# gem 'fog-aws'
-# gem 'carrierwave'
+gem 'fog-aws'
+gem 'carrierwave'
 gem 'mini_magick'
 
 # Configuration Setting
