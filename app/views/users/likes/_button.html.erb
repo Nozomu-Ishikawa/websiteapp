@@ -1,4 +1,4 @@
-<% if user-signed? %>
+<% if user_signed_in? %>
   <% if current_user.likes.find_by(review_id: review.id) %>
     <%= link_to review_like_path(review_id: review.id, id: review.id), method: :delete, remote: true, class: "btn btn-secondary btn-sm unlike-button" do %>
       <i class="fas fa-thumbs-up"></i> いいねを取り消す

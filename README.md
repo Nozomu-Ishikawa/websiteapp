@@ -1,24 +1,45 @@
-# README
+#Game Reviewers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##サービス概要
+もともとゲームが好きで普段から時間が出来次第やっております、しかし今は「ゲーム」といってもEスポーツなどの一つのスポーツとして扱われることなど私たちにとって一般的になりつつあります。
 
-Things you may want to cover:
+「Game Reviewers」ではそんな数あるゲームを、レビュー、ブックマーク、ランキング、カレンダーなどの機能を使用して、日々のゲームライフをもっと楽しく豊かにしようと思いを込めたwebサービスです。
 
-* Ruby version
+人々によって得られた感想などを可視化して、それらをユーザー間でやりとりすることで知らなかったあの名作まで「ゲーマーであることの誇り」を実現を目指します。
 
-* System dependencies
+##当webサービスを作成するにあたって気をつけたこと、これから実装したいこと
 
-* Configuration
+一つ一つの機能自体は至ってシンプル何か画期的なツールなどはありません、しかしRailsならではの強みである「MVCアーキテクチャ」の概念に忠実に従い何よりも「基本」や「開発者」であることを意識した構成を心がけました。
+現在ではまだ実装できてない箇所もあり、日々取り組んで最後には自分の満足いく機能を実装したwebサービスを完成せたいです。
 
-* Database creation
+そして、ただ単に「見せるため」に作成するのではなく、将来、実際に運用するようになったことを考えて、そのために必要な技術とは何かを考えてわからないながら必死に手を動かしています。
 
-* Database initialization
+・管理者のみが管理できるアクセスできる管理画面
+・ユーザー登録時のメールアクティベーション機能
+・サイトマップやメタタグなどのSEO対策
+・DoS（Denial of Services）攻撃などに備えたセキュリティー対策
+・エラーなどの例外や不具合が発生したときの通知機能
+・各種APIを使用したログイン機能など
+・CI/CDツールを使った自動テスト＆自動デプロイ
 
-* How to run the test suite
+他にもGithubん機能を利用して、実際にの開発の流れ「issue確認⇨ブランチを切る⇨開発を行う⇨プッシュする⇨プルリクエストを送信する⇨マージする」を意識してより実践一回流れで作業を進めました。
 
-* Services (job queues, cache servers, search engines, etc.)
+#開発環境
+・Ruby 3.0.1
+・Rails 6.0.4
+・heroku
+・AWS S3
+・MySQL
 
-* Deployment instructions
 
-* ...
+#各種機能
+・プラットフォーム（Heroku, AWS S3）
+・データベース（Mysql）
+・CSSフレームワーク（Boostrap4）
+・ユーザー登録＆ログイン（devise）
+・画像アップロード（carrierwave, mini_magick, AWS S3, fog）
+・カレンダー（simple_calender）
+・評価機能（jquery.raty）
+・いいね、ブックマーク（ajax）
+・パンくずリスト（gretel）
+

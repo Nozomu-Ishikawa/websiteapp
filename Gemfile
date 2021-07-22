@@ -49,7 +49,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "activerecord"
-gem 'devise', '~> 4.7'
+gem 'devise', '~> 4.7', git: "https://github.com/heartcombo/devise"
 gem 'pry-rails'
 gem 'simple_form'
 
@@ -61,11 +61,8 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 
 
-gem 'omniauth'
-gem 'omniauth-rails_csrf_protection'
-gem 'omniauth-twitter'
+gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-github'
 
 gem 'cells-erb'
 gem 'cells-rails'
@@ -83,7 +80,7 @@ gem 'rails-i18n'
 gem 'ransack'
 
 # Pagenation
-gem 'kaminari'
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 
 #Session
 gem 'bcrypt', '~> 3.1.7'

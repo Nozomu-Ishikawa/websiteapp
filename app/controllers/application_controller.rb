@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     return if user_signed_in?
 
     flash[:danger] = 'ログインが必要です'
-    redirect_to new_user_registration_path
+    redirect_to new_user_session_path
   end
 
   
