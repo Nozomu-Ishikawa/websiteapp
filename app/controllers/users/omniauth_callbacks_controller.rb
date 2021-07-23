@@ -6,15 +6,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   
   # callback for google
-  def google_oauth2
-    authorization
-  end
+  # def google_oauth2
+  #   authorization
+  # end
 
-  private
+  # private
 
-  def authorization
-    @user = User.from_omniauth(request.env["omniauth.auth"]
-  end
+  # def authorization
+  #   @user = User.from_omniauth(request.env["omniauth.auth"])
+  # end
   # You should also create an action method in this controller like this:
   # def twitter
   # end

@@ -21,7 +21,6 @@ class ReviewsController < ApplicationController
       title: review_params[:title],
       interesting: review_params[:interesting],
       difficulty: review_params[:difficulty],
-      game_brand: review_params[:game_brand],
       gametype: review_params[:gametype],
       rate: review_params[:rate],
       body: review_params[:body],
