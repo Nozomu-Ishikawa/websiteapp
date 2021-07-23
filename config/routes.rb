@@ -44,6 +44,6 @@ Rails.application.routes.draw do
     resources :events, only: %i[create destroy]
     resources :profiles, only: %i[update]
     resources :email, only: %i[update]
-    resources :password, only: %i[update]
+    # resources :password, only: %i[update]
   end
 end

@@ -215,16 +215,17 @@ Devise.setup do |config|
 
   # Warn on the last attempt before the account is locked.
   # config.last_attempt_warning = true
+  config.mailer_sender = ENV["GMAIL"]
 
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [:email]
+  config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  config.reset_password_within = 1.hours
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
@@ -312,5 +313,5 @@ Devise.setup do |config|
 
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
-  # config.sign_in_after_change_password = true
+  config.sign_in_after_change_password = true
 end

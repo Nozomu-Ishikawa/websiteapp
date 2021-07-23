@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   def index
     @q = Review.ransack(params[:q])
     interestings = params[:interesting].blank? ? Review.interestings.values : params[:interesting]
-    @reviews = @q.result(distinct: true).includes(:user).where(interesting: interestings).page(params[:page]).order(created_at: :desc).per(6)
+    @reviews = @q.result(distinct: true).includes(:user).where(interesting: interestings).page(params[:page]).per(6).order(created_at: :desc)
   end
 
   def show; end

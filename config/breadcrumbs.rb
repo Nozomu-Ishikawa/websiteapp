@@ -17,6 +17,11 @@ crumb :review do
   parent :top
 end
 
+crumb :game do
+  link "ゲーム一覧", games_path
+  parent :top
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
