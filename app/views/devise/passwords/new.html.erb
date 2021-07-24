@@ -7,7 +7,7 @@
         パスワード再設定
       </div>
       <div class="card-body p-4">
-        <%= form_with model: @user, url: password_path, method: :post, local: true do |f| %>
+        <%= form_with model: @user, url: user_password_path, method: :post, local: true do |f| %>
           <div class="form-group px-5">
             <%= f.email_field :email, class: "form-control", required: true, placeholder: '登録中のメールアドレスを入力してください' %>
           </div>

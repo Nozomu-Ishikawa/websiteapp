@@ -76,6 +76,7 @@ gem 'email_validator'
 
 # Internationalization
 gem 'rails-i18n'
+gem 'devise-i18n-views'
 
 # search
 gem 'ransack'
