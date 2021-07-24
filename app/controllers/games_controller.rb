@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   def index
     @q = Game.ransack(params[:q])
     gamebrands = params[:game_brand].blank? ? Game.game_brands.values : params[:game_brand]
-    @games = @q.result(distinct: true).where(game_brand: gamebrands).page(params[:page]).order(created_at: :desc).per(9)
+    @games = @q.result(distinct: true).where(game_brand: gamebrands).page(params[:page]).order(created_at: :desc).per(6)
   end
 
   def show

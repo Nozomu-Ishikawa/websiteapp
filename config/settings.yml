@@ -5,3 +5,6 @@ service:
 slack:
   webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
   channel: <%= ENV['SLACK_CHANNEL_NAME'] %>
+
+mail:
+  reset_password: '【Game Reviewers】パスワード再設定手続きのご案内'

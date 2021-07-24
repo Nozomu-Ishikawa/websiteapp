@@ -14,13 +14,8 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :completions, dependent: :destroy
 
-  # authenticates_with_sorcery! do |config|
-  #   config.authentications_class = Authentication
-  # end
-
-  validates :password, presence: true, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+  validates_confirmation_of :email
+  attr_accessor :email_confirmation
 
   validates :profile, length: { maximum: 200 }
 

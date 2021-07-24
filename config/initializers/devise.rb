@@ -215,7 +215,7 @@ Devise.setup do |config|
 
   # Warn on the last attempt before the account is locked.
   # config.last_attempt_warning = true
-  # config.mailer_sender = ENV["GMAIL"]
+  config.mailer_sender = ENV["GMAIL"]
 
   # ==> Configuration for :recoverable
   #
