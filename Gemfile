@@ -98,3 +98,5 @@ gem 'config'
 # Notification
 gem 'exception_notification'
 gem 'slack-notifier'
+
+gem 'rails_12factor', group: :production
