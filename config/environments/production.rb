@@ -66,10 +66,10 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => ENV['SENDGRID_ACCOUNT'],
-      :password => ENV['SEDGRID_ID'],
-      :domain => "heroku.com",
-      :address => "smtp.sendgrid.net",
+      :user_name => Rails.application.credentials.gmail[:user_name],
+      :password => Rails.application.credentials.gmail[:password],
+      :domain => 'gmail.com',
+      :address => "smtp.gmail.com",
       :port => Settings.smtp[:port],
       :authentication => :plain,
       :enable_starttls_auto => true
