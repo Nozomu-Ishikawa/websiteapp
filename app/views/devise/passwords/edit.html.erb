@@ -5,15 +5,15 @@
         パスワード再設定
       </div>
       <div class="card-body p-4">
-      <%= simple_form_for(@user, url: user_password_path, method: :patch, class: 'registration-main', local: true) do |f| %>
-        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
-        <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
-        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
-        <%= f.hidden_field :reset_password_token %>
+        <%= simple_form_for(@user, url: user_password_path, method: :patch, class: 'registration-main', local: true) do |f| %>
+          <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+          <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+          <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+          <%= f.hidden_field :reset_password_token %>
           <div class="text-center">
-            <%= f.submit "パスワードを変更する" ,class:"register-red-btn" %>
+              <%= f.submit class: "btn btn-danger btn-sm px-5" %>
           </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>

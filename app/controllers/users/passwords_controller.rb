@@ -22,13 +22,29 @@ class Users::PasswordsController < Devise::PasswordsController
   end
 
   # GET /resource/password/edit?reset_password_token=abcdef
-  # def edit
-  #   super
-  # end
+  def edit
+    @token = params[:id]
+    @user = User.load_from_reset_password_token(params[:id])
+
+    return unless @user.blank?
+
+    flash[:danger] = '不正なアクセスです'
+    redirect_to root_path
+  end
 
   # PUT /resource/password
   # def update
-  #   super
+  #   return redirect_to myaccount_password_path, flash: { danger: '現在のパスワードと一致しません' } unless current_user.valid_password?(password_params[:current_password])
+
+  #   current_user.password_confirmation = password_params[:password_confirmation]
+
+  #   if current_user.change_password!(password_params[:password])
+  #     flash[:success] = 'パスワードを更新しました'
+  #     redirect_to myaccount_password_path
+  #   else
+  #     flash[:danger] = 'パスワードの更新に失敗しました'
+  #     render :edit
+  #   end
   # end
 
   # protected
@@ -41,4 +57,10 @@ class Users::PasswordsController < Devise::PasswordsController
   # def after_sending_reset_password_instructions_path_for(resource_name)
   #   super(resource_name)
   # end
+
+  private
+
+  def password_params
+    params.require(:user).permit(:current_password, :password, :password_confirmation)
+  end
 end

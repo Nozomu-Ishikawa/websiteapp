@@ -1,17 +1,11 @@
 class MailerMailer < Devise::Mailer
 
-  def reset_password_instructions(record, token, opts={})
-    super(record, token, opts.merge(default_opts))
+  def reset_password_email(user)
+    @user = User.find user.id
+    @url = edit_password_url(@user.reset_password_token)
+    mail(to: user.email, subject: Settings.mail.reset_password)
   end
-
-  def reset_password_instructions(record, token, opts={})
-    super(record, token, opts.merge(default_opts))
-  end
-
-  def unlock_instructions(record, token, opts={})
-    super(record, token, opts.merge(default_opts))
-  end
-
+  
   def default_opts
     {
         bcc: Settings.mail[:bcc]
