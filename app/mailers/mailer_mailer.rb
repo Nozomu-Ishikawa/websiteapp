@@ -1,11 +1,12 @@
 class MailerMailer < Devise::Mailer
+  default from: 'notifications@example.com'
 
   def reset_password_email(user)
-    @user = User.find user.id
+    @user = user
     @url = edit_password_url(@user.reset_password_token)
     mail(to: user.email, subject: Settings.mail.reset_password)
   end
-  
+
   def default_opts
     {
         bcc: Settings.mail[:bcc]

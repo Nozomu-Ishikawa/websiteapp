@@ -61,6 +61,6 @@ class Users::PasswordsController < Devise::PasswordsController
   private
 
   def password_params
-    params.require(:user).permit(:current_password, :password, :password_confirmation)
+    params.require(:user).permit(:password, :password_confirmation)
   end
 end
