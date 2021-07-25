@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :user_name => Rails.application.credentials.gmail[:user_name],
-      :password => '11eyescross',
+      :password => Rails.application.credentials.gmail[:password],
       :domain => 'gmail.com',
       :address => "smtp.gmail.com",
       :port => Settings.smtp[:port],
