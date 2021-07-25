@@ -61,14 +61,15 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "websiteapp_production"
 
   config.action_mailer.perform_caching = false
-
-  config.action_mailer.default_url_options = {  host: 'https://game-reviewers.herokuapp.com/' }
+  config.action_mailer.perform_deliveries = true
+  host = 'https://game-reviewers.herokuapp.com/' 
+  config.action_mailer.default_url_options = {  host: host }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => ENV['GMAIL_USERNAME'],
-      :password => ENV['GMAIL_PASSWORD'],
-      :domain => 'gmail.com',
+      :user_name => Rails.application.credentials.gmail[:user_name],
+      :password => Rails.application.credentials.gmail[:password],
+      :domain => 'heroku.com',
       :address => "smtp.gmail.com",
       :port => Settings.smtp[:port],
       :authentication => :plain,
