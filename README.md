@@ -73,11 +73,7 @@
 
 https://game-reviewers.herokuapp.com/
 
-```
-テストユーザー用アカウント
-メールアドレス：test@example.com
-パスワード：123456789
-```
+
 
 # 各種機能や導入技術
 ・プラットフォーム(heroku, aws)
