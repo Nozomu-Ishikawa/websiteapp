@@ -50,22 +50,6 @@ Rails.application.configure do
   }
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.perform_deliveries = true
-  host = 'https://game-reviewers.herokuapp.com/' 
-  config.action_mailer.default_url_options = {  host: host }
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :user_name => Rails.application.credentials.gmail[:user_name],
-      :password => Rails.application.credentials.gmail[:password],
-      :domain => 'heroku.com',
-      :address => "smtp.gmail.com",
-      :port => Settings.smtp[:port],
-      :authentication => :plain,
-      :enable_starttls_auto => true
-    }
-
-  config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
