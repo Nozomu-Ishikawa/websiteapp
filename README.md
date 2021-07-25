@@ -81,16 +81,28 @@ https://game-reviewers.herokuapp.com/
 
 # 各種機能や導入技術
 ・プラットフォーム(heroku, aws)
+
 ・データベース(Myaql)
+
 ・CSSフレームワーク(Boostrap4)
+
 ・ユーザー登録ログイン(devise)
+
 ・コードチェック(rubocop,bullet)
+
 ・画像アップロード(carrierwave, mini_magick,aws s3,fog)
+
 ・セキュリティーチェック(breakeman)
+
 ・レビュー(jquery.raty)
+
 ・カレンダー(simple_calender)
+
 ・いいね、ブックマーク(ajax)
+
 ・パーシャル(cell)
+
 ・パンくずリスト(greatel)
+
 
 
