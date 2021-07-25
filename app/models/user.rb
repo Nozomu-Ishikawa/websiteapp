@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers:  [:facebook, :twitter]
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
   
   # アソシエーション
   has_many :sns
@@ -14,8 +14,13 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :completions, dependent: :destroy
 
-  validates_confirmation_of :email
-  attr_accessor :email_confirmation
+  # authenticates_with_sorcery! do |config|
+  #   config.authentications_class = Authentication
+  # end
+
+  validates :password, presence: true, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :profile, length: { maximum: 200 }
 
@@ -24,17 +29,11 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def self.from_omniauth(auth)
-    where(uid: auth.uid).first
-  end
-
-  def self.new_with_session(_, session)
-    super.tap do |user|
-      if (data = session['devise.omniauth_data'])
-        user.email = data['email'] if user.email.blank?
-        user.provider = data['provider'] if data['provider'] && user.provider.blank?
-        user.uid = data['uid'] if data['uid'] && user.uid.blank?
-        user.skip_confirmation!
-      end
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.name = auth.info.name
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
   end
 
   def self.guest
@@ -50,6 +49,7 @@ class User < ApplicationRecord
   def self.order_by_completions
     User.select('users.*', 'count(completions.id) AS completions').left_joins(:completions).group('users.id').order('completions DESC')
   end
+  
 # global settings
-end
+
 end
