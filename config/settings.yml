@@ -16,5 +16,9 @@ smtp:
   user_name: <%= ENV["GMAIL"] %>
   password: <%= ENV["GMAIL_PASSWORD"] %>
 
+facebook:
+  facebook_api_key: '<%= ENV["APP_ID"] %>'
+  facebook_api_secret: '<%= ENV["APP_SECRET_ID"] %>'
+
 bcc:
   mail: 'https://game-reviewers.herokuapp.com/'
