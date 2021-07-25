@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers:  [:facebook, :twitter]
   
   # アソシエーション
   has_many :sns
@@ -24,11 +24,17 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.name = auth.info.name
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-    end
+    where(uid: auth.uid).first
+  end
+
+  def self.new_with_session(_, session)
+    super.tap do |user|
+      if (data = session['devise.omniauth_data'])
+        user.email = data['email'] if user.email.blank?
+        user.provider = data['provider'] if data['provider'] && user.provider.blank?
+        user.uid = data['uid'] if data['uid'] && user.uid.blank?
+        user.skip_confirmation!
+      end
   end
 
   def self.guest
@@ -44,7 +50,6 @@ class User < ApplicationRecord
   def self.order_by_completions
     User.select('users.*', 'count(completions.id) AS completions').left_joins(:completions).group('users.id').order('completions DESC')
   end
-  
 # global settings
-
+end
 end

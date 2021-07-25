@@ -20,11 +20,11 @@
       </div>
       <div class="card-body p-4">
         <div class="text-center">
-          <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-block btn btn-fb btn-sm text-white px-5" do %>
+          <%= link_to root_path, method: :post, class: "btn-block btn btn-fb btn-sm text-white px-5" do %>
             <i class="fab fa-facebook-square"></i> Googleでログイン
           <% end %>
-          <%= link_to root_path, class: "btn-block btn btn-tw btn-sm text-white px-5" do %>
-            <i class="fab fa-twitter-square"></i> Twitterでログイン
+          <%= link_to user_facebook_omniauth_authorize_path, class: "btn-block btn btn-tw btn-sm text-white px-5" do %>
+            <i class="fab fa-twitter-square"></i> FaceBookでログイン
           <% end %>
           <%= link_to root_path, class: "btn-block btn btn-li btn-sm text-white px-5" do %>
             <i class="fab fa-line"></i> LINEでログイン
