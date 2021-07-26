@@ -88,5 +88,15 @@ https://game-reviewers.herokuapp.com/
 
 ・SEO対策(google-analytics,meta-tags)
 
+# 現在の課題
+
+・simple_calender使用時に予定を記入はできるが、削除しようとするとなぜかルーティングエラーになるためそこ修正
+
+・パスワード再設定メール送信後のURLからのアクセスできるページのCSS修正
+
+・パスワード変更後のアラート位置がずれている
+
+・
+
 
 
