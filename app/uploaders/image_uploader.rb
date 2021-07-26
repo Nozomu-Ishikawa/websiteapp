@@ -4,7 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production?
     storage :file
   else
-    storage :file
+    storage :file #修正箇所
   end
 
   def store_dir

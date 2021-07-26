@@ -1,4 +1,4 @@
-class PasswordController < Devise::PasswordsController
+class PasswordController < ApplicationController
   def new; end
 
   def create

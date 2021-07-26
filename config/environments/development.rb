@@ -43,8 +43,8 @@ Rails.application.configure do
     :address => Settings.smtp[:address],
     :port => Settings.smtp[:port],
     :domain => Settings.smtp[:domain],
-    :user_name => Rails.application.credentials.gmail[:user_name],
-    :password => Rails.application.credentials.gmail[:password],
+    :user_name => ENV['DEVELOPER_MAIL'],
+    :password => ENV['DEVELOPER_MAIL_PASSWORD'],
     :authentication => 'login',
     :enable_starttls_auto => true
   }
