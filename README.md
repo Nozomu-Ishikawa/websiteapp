@@ -102,7 +102,9 @@ https://game-reviewers.herokuapp.com/
 
 ・パスワード変更後のアラート位置がずれている
 
-・
+・fog-awsとcarrierewaveの組み合わせで画像アップロード機能を実装したいが、　Argument（is not a recognized provider） 警告文からおそらくprovider 自体読み込めてないと判断したので
+　carrirewave.rbとimageuploader.rbの記述や環境変数がうまく渡せてないと思い調べてみましたが問題なし（rails cと念のためheroku configで本番環境での確認）もしましたがちゃんと適用されてて
+ 今のところ解決策が出てこず後回し
 
 
 
