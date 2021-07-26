@@ -49,25 +49,6 @@
 ・MySQL. 
 
 
-#各種機能
-・プラットフォーム（Heroku, AWS S3). 
-
-・データベース（Mysql）. 
-
-・CSSフレームワーク（Boostrap4). 
-
-・ユーザー登録＆ログイン（devise）. 
-
-・画像アップロード（carrierwave, mini_magick, AWS S3, fog）. 
-
-・カレンダー（simple_calender）. 
-
-・評価機能（jquery.raty）. 
-
-・いいね、ブックマーク（ajax）. 
-
-・パンくずリスト（gretel）. 
-
 
 # URL
 
@@ -102,6 +83,10 @@ https://game-reviewers.herokuapp.com/
 ・パーシャル(cell)
 
 ・パンくずリスト(greatel)
+
+・評価機能（jquery.raty）.
+
+・SEO対策(google-analytics,meta-tags)
 
 
 
