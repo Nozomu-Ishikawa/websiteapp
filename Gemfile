@@ -102,4 +102,8 @@ gem 'config'
 gem 'exception_notification'
 gem 'slack-notifier'
 
+#seo
+gem 'meta-tags'
+gem 'sitemap_generator'
+
 gem 'rails_12factor', group: :production

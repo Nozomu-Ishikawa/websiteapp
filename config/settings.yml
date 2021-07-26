@@ -2,6 +2,18 @@ service:
   default_host: 'localhost:3000'
   name: 'Game Reviewers'
 
+default_meta_tags:
+  title: 'Game Reviewers'
+  charset: 'utf-8'
+  description: 'Game Reviwersでは、レビューやブックマーク、スケジュール機能ランキング機能を活用して、知らなかったあの名作を見つけ見つけることができるwebサービスです'
+  reverse: true
+  keywords: 'ゲーム、レビュー、ゲームブランド、任天堂、セガ、ソニー、'
+  og:
+    title: 'タイトル' # もしくは title: :title
+    description: 'description' # もしくは description: :description
+    type: 'website'
+    locale: 'ja_JP'
+
 slack:
   webhook_url: <%= ENV['SLACK_WEBHOOK_URL'] %>
   channel: <%= ENV['SLACK_CHANNEL_NAME'] %>
