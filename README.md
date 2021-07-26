@@ -74,6 +74,9 @@
 https://game-reviewers.herokuapp.com/
 
 
+# ER図
+
+<img width="907" alt="スクリーンショット 2021-07-26 14 38 09" src="https://user-images.githubusercontent.com/58387537/126938399-f171341b-9346-4160-949a-eff71039804a.png">
 
 # 各種機能や導入技術
 ・プラットフォーム(heroku, aws)
