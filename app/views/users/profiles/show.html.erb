@@ -26,9 +26,10 @@
           <div id="tab1" class="tab-pane active">
             <%= render 'users/shared/reviews', reviews: @user.reviews.page(params[:page]).order(created_at: :desc) %>
           </div>
-          <div id="tab2" class="tab-pane">
+          <%# 不具合が出るため後回し %>
+          <%# <div id="tab2" class="tab-pane">
             <%= render 'users/shared/bookmarks', bookmarks: @user.bookmarks.includes(:game).page(params[:page]).order(created_at: :desc) %>
-          </div>
+          <%# </div> %>
         </div>
       </div>
     </div>
