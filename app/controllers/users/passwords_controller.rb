@@ -33,19 +33,14 @@ class Users::PasswordsController < Devise::PasswordsController
   end
 
   # PUT /resource/password
-  # def update
-  #   return redirect_to myaccount_password_path, flash: { danger: '現在のパスワードと一致しません' } unless current_user.valid_password?(password_params[:current_password])
+  def update
+    return redirect_to myaccount_password_path, flash: { danger: '現在のパスワードと一致しません' } unless current_user.valid_password?(password_params[:current_password])
 
-  #   current_user.password_confirmation = password_params[:password_confirmation]
-
-  #   if current_user.change_password!(password_params[:password])
-  #     flash[:success] = 'パスワードを更新しました'
-  #     redirect_to myaccount_password_path
-  #   else
-  #     flash[:danger] = 'パスワードの更新に失敗しました'
-  #     render :edit
-  #   end
-  # end
+    current_user.password_confirmation = password_params[:password_confirmation]
+    
+      flash[:success] = 'パスワードを更新しました'
+      redirect_to myaccount_password_path
+  end
 
   # protected
 
