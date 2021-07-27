@@ -1,0 +1,34 @@
+<div class="row pt-3 pb-5">
+  <div class="col-sm-8 order-md-2 mb-3">
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        プレイしたゲーム数
+      </div>
+      <div class="card-body p-4">
+        <%= column_chart current_user.completions.group_by_month_of_year(:created_at).count %>
+        <%= render 'users/myaccount/sp_menu' %>
+      </div>
+    </div>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        ゲーム別比率
+      </div>
+      <div class="card-body p-4">
+        <%= pie_chart current_user.reviews.group(:gametype).count %>
+        <%= render 'users/myaccount/sp_menu' %>
+      </div>
+    </div>
+    <div class="card bg-white border-none shadow-sm mb-3">
+      <div class="card-header font-weight-bold">
+        ゲームブランド別レビュー
+      </div>
+      <div class="card-body p-4">
+        <%= bar_chart current_user.reviews.group(:game_brand).count, {yAxis: {allowDecimals: false }} %>
+        <%= render 'users/myaccount/sp_menu' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 order-md-1">
+    <%= render 'users/myaccount/sidebar' %>
+  </div>
+</div>

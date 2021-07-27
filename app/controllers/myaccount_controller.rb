@@ -15,6 +15,8 @@ class MyaccountController < ApplicationController
 
   def profile; end
 
+  def charts; end
+
   def email; end
 
   def password; end

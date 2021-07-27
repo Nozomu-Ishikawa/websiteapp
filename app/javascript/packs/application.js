@@ -10,6 +10,8 @@ require("channels")
 require("../global-script/account")
 require("../global-script/login")
 require('jquery')
+require("chartkick")
+require("chart.js") 
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

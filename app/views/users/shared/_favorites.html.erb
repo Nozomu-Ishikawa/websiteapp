@@ -1,4 +1,5 @@
-<% favorites.each do |favorite| %>
+<% if favorites.exists? %>
+  <% favorites.each do |favorite| %>
     <%= link_to review_path(favorite.review) do %>
       <div class="reviews">
         <div class="review-image">
@@ -6,7 +7,7 @@
         </div>
         <div class="review-content">
           <h2 class="fs-22 font-weight-bold">
-            <%= favorite.review.shop_name %>（<%= favorite.review.prefecture %>）
+            <%= favorite.review.game %>（<%= favorite.review.game_brand %>）
           </h2>
           <div id="review-rate-<%= favorite.review.id %>"></div>
           <script>
