@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman', require: false
   gem 'bullet'
-  gem 'rubocop'
+  gem 'rubocop', require:false
 end
 
 group :development do
