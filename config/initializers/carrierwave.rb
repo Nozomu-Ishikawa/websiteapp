@@ -4,9 +4,9 @@ require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
   case Rails.env
-  when 'development', 'production'#<=test
-    config.storage = :file #修正箇所
-    config.cache_storage = :file #修正箇所
+  when 'development', 'test'
+    config.storage = :file
+    config.cache_storage = :file
   else
     config.fog_credentials = {
       provider: 'AWS',
@@ -15,6 +15,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1',
     }
     config.fog_provider = 'fog/aws'
+    config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/websiteapp"
     config.storage :fog
     config.cache_storage = :fog
     config.fog_directory = 'websiteapp'
