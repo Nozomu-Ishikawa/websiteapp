@@ -96,7 +96,6 @@ https://game-reviewers.herokuapp.com/
 
 # 現在の課題
 
-・simple_calender使用時に予定を記入はできるが、削除しようとするとなぜかルーティングエラーになるためそこ修正
 
 ・パスワード再設定メール送信後のURLからのアクセスできるページのCSS修正
 
