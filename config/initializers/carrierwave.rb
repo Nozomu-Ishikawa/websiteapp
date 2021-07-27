@@ -12,13 +12,13 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: 'ap-northeast-1',
+      region: ENV['S3_REGION']
     }
     config.fog_provider = 'fog/aws'
-    config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/websiteapp"
+    config.asset_host = ENV['S3_HOST']
     config.storage :fog
     config.cache_storage = :fog
-    config.fog_directory = 'websiteapp'
+    config.fog_directory = ENV['S3_BAKET']
     config.fog_public = false
   end
 end
