@@ -105,5 +105,6 @@ https://game-reviewers.herokuapp.com/
 　carrirewave.rbとimageuploader.rbの記述や環境変数がうまく渡せてないと思い調べてみましたが問題なし（rails cと念のためheroku configで本番環境での確認）もしましたがちゃんと適用されてて
  今のところ解決策が出てこず後回し
 
+・マイページでのパスワード、メールアドレス変更機能の実装
 
 
