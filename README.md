@@ -74,6 +74,8 @@ https://game-reviewers.herokuapp.com/
 
 ・コードチェック(rubocop,bullet)
 
+・ページネーション(Kaminari)
+
 ・画像アップロード(carrierwave, mini_magick,aws s3,fog)
 
 ・セキュリティーチェック(breakeman)
