@@ -100,7 +100,7 @@ gem 'dotenv-rails'
 gem 'config'
 
 # chart
-gem 'chartkick'
+# gem 'chartkick'
 
 # Notification
 gem 'exception_notification'

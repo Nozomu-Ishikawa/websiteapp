@@ -4,5 +4,3 @@
 //= require bootstrap
 //= require jquery.raty
 //= require image-preview
-//= require chartkick
-//= require Chart.bundle
