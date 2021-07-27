@@ -99,6 +99,9 @@ gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'config'
 
+# chart
+gem 'chartkick'
+
 # Notification
 gem 'exception_notification'
 gem 'slack-notifier'
