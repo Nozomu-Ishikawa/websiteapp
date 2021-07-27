@@ -8,7 +8,7 @@
               <%= image_tag bookmark.game.image.url if bookmark.game.image? %>
             </div>
           	<div class="card-body">
-          		<p class="card-title font-weight-bold"><%= bookmark.game.name %>（<%= bookmark.game.game_brand %>）</p>
+          		<p class="card-title font-weight-bold"><%= bookmark.game.title %>（<%= bookmark.game.game_brand %>）</p>
           		<p class="fs-12">（<%= bookmark.game.reviews.count %>件のレビュー）</p>
           		<% if bookmark.game.completions.exists? %>
           		  <span class="badge badge-success">プレイ済み</span>
