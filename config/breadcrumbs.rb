@@ -22,6 +22,26 @@ crumb :game do
   parent :top
 end
 
+crumb :question do
+  link "よくある質問", questions_path
+  parent :top
+end
+
+crumb :developer do
+  link "開発者メモ", developer_path
+  parent :top
+end
+
+crumb :corporation do
+  link "運営会社", corporation_path
+  parent :top
+end
+
+crumb :privacy do
+  link "プライバシーポリシー", corporation_path
+  parent :top
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

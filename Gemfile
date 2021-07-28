@@ -53,6 +53,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "activerecord"
 gem 'devise', '~> 4.7', git: "https://github.com/heartcombo/devise"
 gem 'pry-rails'
+gem 'redcarpet'
 gem 'simple_form'
 
 gem 'uglifier'
