@@ -22,7 +22,6 @@ crumb :game do
   parent :top
 end
 
-
 crumb :question do
   link "よくある質問", questions_path
   parent :top
@@ -39,8 +38,9 @@ crumb :corporation do
 end
 
 crumb :privacy do
-  link "プライバシーポリシー", corporation_path
+  link "プライバシーポリシー", privacy_path
   parent :top
+end
   
 crumb :ranking do
   link "ランキング", ranking_index_path
