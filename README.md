@@ -107,4 +107,5 @@ https://game-reviewers.herokuapp.com/
 
 ・いいね！ボタンを押した際にページを更新しなくちゃボタンがそのまま
 
+・パスワード再設定ページのcss修正
 
