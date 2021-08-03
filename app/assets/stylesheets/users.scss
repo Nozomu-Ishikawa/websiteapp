@@ -107,3 +107,19 @@ footer {
     overflow: hidden;
   }
 }
+
+.reviewer .reviewer-image {
+  display: inline-block;
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+
+.user .image img {
+  max-width: 100%;
+}
