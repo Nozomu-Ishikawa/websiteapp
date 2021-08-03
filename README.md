@@ -118,3 +118,5 @@ https://game-reviewers.herokuapp.com/
 
 ・パスワード再設定ページのcss修正
 
+・レビュー投稿時にアップロードした画像が表示されない
+
