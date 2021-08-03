@@ -2,9 +2,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   if Rails.env.production?
-    storage :fog #修正箇所
+    storage :fog
   else
-    storage :file #修正箇所
+    storage :file
   end
 
   def store_dir
