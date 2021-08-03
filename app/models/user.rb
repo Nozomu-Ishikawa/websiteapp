@@ -42,6 +42,7 @@ class User < ApplicationRecord
       user.confirmed_at = Time.now
       user.name = "ゲスト"
       user.password = "123456789"
+      user.password_confirmation = "123456789"
     end
   end
 
