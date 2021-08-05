@@ -16,4 +16,8 @@ class AboutController < ApplicationController
     @developer = File.read(Rails.root.join('static', 'developer.md'))
   end
 
+  def terms
+    @terms = File.read(Rails.root.join('static', 'terms.md'))
+  end
+
 end

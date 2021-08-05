@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get :corporation, to: 'about#corporation'
   get :privacy, to: 'about#privacy'
   get :developer, to: 'about#developer'
+  get :terms, to: 'about#terms'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
