@@ -61,7 +61,6 @@ gem 'simple_form'
 
 gem 'uglifier'
 gem 'bootstrap', '~> 4.1.1'
-# gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'devise-i18n'
