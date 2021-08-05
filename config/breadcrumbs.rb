@@ -37,6 +37,11 @@ crumb :corporation do
   parent :top
 end
 
+crumb :terms do
+  link "利用規約", terms_path
+  parent :top
+end
+
 crumb :privacy do
   link "プライバシーポリシー", corporation_path
   parent :top

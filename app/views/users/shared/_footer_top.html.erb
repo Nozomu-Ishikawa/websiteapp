@@ -23,18 +23,14 @@
             <%= link_to '運営会社', corporation_path %>
           </p>
           <p class="fs-14">
-            <%= link_to '利用規約', root_path %>
+            <%= link_to '利用規約', terms_path %>
           </p>
           <p class="fs-14">
             <%= link_to 'プライバシーポリシー', privacy_path %>
           </p>
         </div>
         <div class="col-md-3 contact">
-          <h3 class="footer_header">
-            お問い合わせ
-          </h3>
-          <p>お問い合わせは　<%= mail_to 'gamereviewersmaster@gmail.com', 'こちら' %>　からお願いします。</p>
-          <p>ほげ県ホゲホゲ市ホゲ区</p>
+          <p>お問い合わせは <%= mail_to 'gamereviewersmaster@gmail.com', 'こちら' %> からお願いします。</p>
         </div>
       </div>
     </div>
