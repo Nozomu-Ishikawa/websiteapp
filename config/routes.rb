@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   scope module: :users do
     resources :notices, only: %i[index]
     resources :articles, only: %i[index show]
+    resources :opinions, only: %i[create]
   end
 
   resources :reviews, except: %i[new] do
