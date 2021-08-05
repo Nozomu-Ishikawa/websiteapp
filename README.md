@@ -89,6 +89,8 @@ https://game-reviewers.herokuapp.com/
 
 ・セキュリティーチェック(breakeman)
 
+・メールアクティベーション、パスワードリセット（ActionMailer）
+
 ・レビュー(jquery.raty)
 
 ・カレンダー(simple_calender)
