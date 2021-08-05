@@ -95,6 +95,8 @@ https://game-reviewers.herokuapp.com/
 
 ・いいね、ブックマーク(ajax)
 
+・マークダウン（redcarpet）
+
 ・パーシャル(cell)
 
 ・パンくずリスト(greatel)
