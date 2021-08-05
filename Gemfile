@@ -34,6 +34,9 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'rubocop', require:false
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem "shoulda-matchers"
 end
 
 group :development do
@@ -58,6 +61,7 @@ gem 'simple_form'
 
 gem 'uglifier'
 gem 'bootstrap', '~> 4.1.1'
+# gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'devise-i18n'
