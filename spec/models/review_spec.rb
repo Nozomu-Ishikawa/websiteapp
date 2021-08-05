@@ -10,13 +10,14 @@ RSpec.describe Review, type: :model do
   end
   
   describe "Validations" do
-    #  ゲームタイトルの名前がなければ無効
+
+    # ゲームタイトルの名前がなければ無効
     it { is_expected.to validate_presence_of(:title) }
     
-    # 都道府県がなければ無効
+    # ゲームブランドがなければ無効
     it { is_expected.to validate_presence_of(:game_brand) }
     
-    # 所在地がなければ無効
+    # ゲームジャンルがなければ無効
     it { is_expected.to validate_presence_of(:gametype) }
     
     # 評価がなければ無効

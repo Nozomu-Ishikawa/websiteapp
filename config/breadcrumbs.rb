@@ -43,8 +43,48 @@ crumb :terms do
 end
 
 crumb :privacy do
-  link "プライバシーポリシー", corporation_path
+  link "プライバシーポリシー", privacy_path
   parent :top
+end
+  
+crumb :ranking do
+  link "ランキング", ranking_index_path
+  parent :top
+end
+
+crumb :profile do
+  link "マイプロファイル", dashboard_index_path
+  parent :top
+end
+
+crumb :myaccount_reviews do
+  link "マイレビュー", myaccount_reviews_path
+  parent :profile
+end
+
+crumb :myaccount_bookmarks do
+  link "マイブックマーク", myaccount_bookmarks_path
+  parent :profile
+end
+
+crumb :myaccount_events do
+  link "マイイベント", myaccount_events_path
+  parent :profile
+end
+
+crumb :myaccount_profile do
+  link "プロファイル編集", myaccount_profile_path
+  parent :profile
+end
+
+crumb :myaccount_email do
+  link "パスワード編集", myaccount_email_path
+  parent :profile
+end
+
+crumb :myaccount_password do
+  link "パスワード編集", myaccount_password_path
+  parent :profile
 end
 
 # crumb :projects do

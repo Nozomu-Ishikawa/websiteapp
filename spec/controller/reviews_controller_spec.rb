@@ -6,10 +6,6 @@ RSpec.describe ReviewsController, type: :controller do
   let(:game) { create(:game) }
   let(:review) { create(:review) }
   
-  before do
-    login_user(user)
-  end
-  
   describe "GET #index" do
     
     # 正常なレスポンスを返す
