@@ -29,18 +29,8 @@
             <%= link_to 'プライバシーポリシー', privacy_path %>
           </p>
         </div>
-        <div class="col-md-3">
-          <div class="rounded bg-white text-center p-3 mb-3">
-            <p class="font-weight-bold fs-16">ご意⾒・ご要望</p>
-            <%= simple_form_for Opinion.new, url: opinions_path, method: :post, local: true do |f| %>
-              <%= f.input :content, input_html: { rows: 4 }, label: false, placeholder: 'サービスに関するご意見・ご要望をお待ちしております。'  %>
-              <%= f.submit '送信', class: "btn btn-danger w-100" %>
-            <% end %>
-          </div>
-          <div class="rounded bg-white text-center p-3">
-            <%# <p class="font-weight-bold fs-16">返信・サポートが必要な場合はこちら</p> %>
-            <p>各種お問い合わせは <%= mail_to 'gamereviewersmaster@gmail.com', 'こちら' %> からお願いします。</p>
-          </div>
+        <div class="col-md-3 contact">
+          <p>お問い合わせは <%= mail_to 'gamereviewersmaster@gmail.com', 'こちら' %> からお願いします。</p>
         </div>
       </div>
     </div>
