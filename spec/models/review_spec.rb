@@ -10,6 +10,7 @@ RSpec.describe Review, type: :model do
   end
   
   describe "Validations" do
+
     # ゲームタイトルの名前がなければ無効
     it { is_expected.to validate_presence_of(:title) }
     
