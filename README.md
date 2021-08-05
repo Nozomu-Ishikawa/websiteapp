@@ -95,6 +95,8 @@ https://game-reviewers.herokuapp.com/
 
 ・いいね、ブックマーク(ajax)
 
+・マークダウン（redcarpet）
+
 ・パーシャル(cell)
 
 ・パンくずリスト(greatel)
@@ -103,6 +105,7 @@ https://game-reviewers.herokuapp.com/
 
 ・SEO対策(google-analytics,meta-tags)
 
+・通知機能（exception_notification、slack-notifier）
 
 
 # 現在の課題
