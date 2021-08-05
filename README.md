@@ -107,6 +107,8 @@ https://game-reviewers.herokuapp.com/
 
 ・SEO対策(google-analytics,meta-tags)
 
+・コードテスト（rspec-rails、factory_bot_rails、shoulda-matchers）
+
 ・通知機能（exception_notification、slack-notifier）
 
 
