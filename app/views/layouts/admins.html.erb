@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Reviewers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= favicon_link_tag('favicon.ico') %>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.0.0/dist/siimple.min.css">
+    <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admins', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render 'admins/shared/header' %>
+    <%= render 'admins/shared/sidebar' %>
+    <%= yield %>
+    <%= render 'admins/shared/footer' %>
+  </body>
+</html>
