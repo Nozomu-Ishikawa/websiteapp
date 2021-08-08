@@ -1,0 +1,12 @@
+@import 'admin-lte/dist/css/adminlte.min';
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import 'admins/article';
+
+.pagination {
+  justify-content: center;
+  padding-top: 20px;
+  margin: 0;
+}

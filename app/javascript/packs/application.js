@@ -10,6 +10,7 @@ require("channels")
 require("../global-script/account")
 require("../global-script/login")
 require('jquery')
+require("admin-lte")
 
 
 
