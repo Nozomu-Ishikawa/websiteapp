@@ -1,4 +1,4 @@
-class Admins::ApplicationController < ::ApplicationController
+class Admins::ApplicationController < ApplicationController
   layout 'admins'
 
   private
