@@ -54,4 +54,14 @@ Rails.application.routes.draw do
     resources :email, only: %i[update]
     # resources :password, only: %i[update]
   end
+
+  namespace :admins do
+    resources :dashboard, only: %i[index]
+    resources :users, only: %i[index new create edit update destroy]
+    resources :inquiries, only: %i[index show]
+    resources :opinions, only: %i[index]
+    resources :notifications, only: %i[index]
+    resources :articles, only: %i[index new create edit update destroy]
+    resources :informations, only: %i[index new create edit update destroy]
+  end
 end
