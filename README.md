@@ -127,3 +127,8 @@ https://game-reviewers.herokuapp.com/
 
 ・レビュー投稿時にアップロードした画像が表示されない
 
+・docker導入
+
+・ciercleCIを使用しての自動デプロイ
+
+・ADMINLTEを使用して管理者専用ページ作成
